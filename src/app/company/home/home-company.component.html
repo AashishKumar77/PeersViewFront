@@ -1,0 +1,35 @@
+<div class="home-company-component">
+    <div class="container" id="home-company-component">
+      <shared-navbar-unauth-component
+        [peersviewLogo]=true
+        [logo] = true
+        [isLogoBlue]=true
+        [career]=true
+        [employers]= true
+        [signIn]=true
+        [signUp]=true>
+      </shared-navbar-unauth-component>
+      <div class="content">
+        <div class="title-section d_flex flex_wrap">
+          <h1 class="title">Find Companies Across Canada</h1>
+          <div class="d_flex">
+            <div class="input-wrapper">
+              <input class="search-box" placeholder="Search Companies" (keyup)="onKey($event)">
+              <img src="https://res.cloudinary.com/peersview-com/image/upload/v1585225195/filter_component_rwqzp3.png" class="filter-icon" (click)="openFilterModal()"/>
+              <!-- (click)="openFilterModal()" -->
+            </div>
+            <button class="btn-peersview-primary btn-lg desktop" (click)="onSearchCompany()">Search</button>
+            <button class="btn-peersview-primary btn-lg mobile" (click)="onSearchCompany()">
+              <i class="material-icons">search</i>
+            </button>
+          </div>
+        </div>
+        <div class="jobs-wrapper m-peersview-yt-3 d_flex flex_wrap">
+          <div class="job-item" *ngFor="let company of companys">
+            <company-card-component [company]="company"></company-card-component>
+          </div>
+        </div>
+      </div>
+    </div>
+    <index-footer-component></index-footer-component>
+  </div>

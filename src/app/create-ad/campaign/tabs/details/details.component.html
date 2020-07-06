@@ -1,0 +1,67 @@
+<div class="create-ad-campaign-details-component">
+    <div>
+        <div>
+            <div>
+                <div class="header">
+                    <h3>Campaign Setup</h3>
+                </div>
+                <div class="content">
+                    <div class="form-group">
+                        <label>Campaign name</label>
+                        <input type="text" [(ngModel)]="form.title" [ngModelOptions]="{standalone: true}" #title="ngModel" class="form-control" required>
+                        <div *ngIf="title.invalid && (title.dirty || title.touched)" class="alert alert-danger">
+                            <div *ngIf="title.errors.required">
+                                Campaign name is required.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Funding source</label>
+                        <select class="form-control" name="country" [(ngModel)]="form.country" [ngModelOptions]="{standalone: true}" #country="ngModel" required>
+                          <option selected="selected" disabled>Select funding source</option>
+                          <option>Credit/debit card</option>
+                        </select>
+                        <p>remaining budget: Not Available | Runs: August 22, 2019-present</p>
+                        <div *ngIf="country.invalid && (country.dirty || country.touched)" class="alert alert-danger">
+                          <div *ngIf="country.errors.required">
+                            Funding source is required.
+                          </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="d_flex">
+                            <div class="flex_1 p-peersview-xr-1">
+                                <label>Daily budget</label>
+                                <input type="text" [(ngModel)]="form.title" [ngModelOptions]="{standalone: true}" #title="ngModel" class="form-control" required>
+                                <div *ngIf="title.invalid && (title.dirty || title.touched)" class="alert alert-danger">
+                                    <div *ngIf="title.errors.required">
+                                        Campaign name is required.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex_1 p-peersview-xl-1">
+                                <label>Total budget (optional)</label>
+                                <input type="text" [(ngModel)]="form.title" [ngModelOptions]="{standalone: true}" #title="ngModel" class="form-control" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div>
+
+                        </div>
+                        <div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div>
+                <div class="header">
+                    <h3>Objective Summary</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

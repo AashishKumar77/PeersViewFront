@@ -1,0 +1,22 @@
+<div class="blog-filter-modal">
+  <h3 class="modal-heading">Filters</h3>
+  <div class="modal-body ng-scope">
+    <h4>Scholarship Type</h4>
+    <div class="filter-content">
+      <span class="filter-item m-peersview-xr-1" [ngClass]="{active: isFulltimeFilter}" (click)="toggleFilterType(0)">Bachelor (Undergraduate)</span>
+      <span class="filter-item m-peersview-xr-1" [ngClass]="{active: isParttimeFilter}" (click)="toggleFilterType(1)">Master (Postgraduate)</span>
+      <span class="filter-item m-peersview-xr-1" [ngClass]="{active: isIntershipFilter}" (click)="toggleFilterType(2)">PhD (Doctorate)</span>
+    </div>
+    <!-- <h4>Work Authorization For International Students</h4>
+    <div>
+      <div class="checkbox-item">
+        <input type="checkbox" [(ngModel)]="form.name">
+        <span>Will sponsor work visa</span>
+      </div>
+    </div> -->
+  </div>
+  <div class="modal-footer text-center">
+    <button type="button" class="btn-peersview-secondary btn-peersview-sm" (click)="onCancel()">Cancel</button>
+    <button type="button" class="btn-peersview-primary btn-peersview-sm" (click)="onSave()">See Scholarships</button>
+  </div>
+</div>

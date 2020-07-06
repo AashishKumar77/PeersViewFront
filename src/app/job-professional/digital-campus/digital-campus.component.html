@@ -1,0 +1,140 @@
+<div class="premium-digital-campus">
+    <div class="content-wrapper"> 
+        <div class="left-sidenav"> 
+            <div class="header"> 
+                <input />
+                <span>
+                    <i class="material-icons">search</i>
+                </span>
+            </div>
+            <div class="list-wrapper"> 
+                <div class="collaps-item"> 
+                    <i class="material-icons left-icon">arrow_drop_down</i>
+                    <span>All Students</span>
+                    <i class="material-icons add-icon">add</i>
+                </div>
+                <div class="items">
+                    <div class="item" *ngFor="let user of users" [ngClass]="{'active': selectedUser && user.id == selectedUser.id}" (click)="selectUser(user)"> 
+                        <span class="status" [ngClass]="{'active': user.status}"></span>
+                        {{user.name}}
+                    </div> 
+                </div>
+            </div>
+        </div>
+        <div class="content"> 
+            <div class="header"> 
+                <h2>Write a Post</h2>
+                <span class="info"> 
+                    <i class="material-icons">info</i>
+                </span>
+            </div>
+            <div class="section">
+                <div class="odd"> 
+                    <img src="https://i.pravatar.cc/50"/>
+                    <div class="message-wrapper"> 
+                        <div class="message"> 
+                            <p>Name</p>
+                            <span> 
+                                George Collins
+                            </span>
+                            <p>Course</p>
+                            <span> 
+                                Computer science
+                            </span>
+                            <p>Post</p>
+                            <span> 
+                                Computer science is the study of processes that interact with data and that can be 
+                                represented as data in the form of programs. It enables the use of algorithms to
+                            </span>
+                        </div>
+                        <div class="info"> 
+                            <i class="material-icons primary">thumb_up</i>
+                            <span class="primary">23</span>
+                            <i class="material-icons secondary">sms</i>
+                            <span class="secondary">3</span>
+                            <a>Reply</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="even"> 
+                    <div class="message-wrapper"> 
+                        <div class="message"> 
+                            <p>Name</p>
+                            <span> 
+                                George Collins
+                            </span>
+                            <p>Course</p>
+                            <span> 
+                                Computer science
+                            </span>
+                            <p>Post</p>
+                            <span> 
+                                Computer science is the study of processes that interact with data and that can be 
+                                represented as data in the form of programs. It enables the use of algorithms to
+                            </span>
+                        </div>
+                        <div class="info"> 
+                            <i class="material-icons primary">thumb_up</i>
+                            <span class="primary">23</span>
+                            <i class="material-icons secondary">sms</i>
+                            <span class="secondary">3</span>
+                            <a>Reply</a>
+                        </div>
+                    </div>
+                    <img src="https://i.pravatar.cc/50?img=3"/>
+                </div>
+            </div>
+        </div>
+        <div class="right-panel"> 
+            <div class="header"> 
+                <div class="input-wrapper"> 
+                    <input />
+                    <span> 
+                        <i class="material-icons">filter_list</i>
+                    </span>
+                </div>
+                <span class="search">
+                    <i class="material-icons">search</i>
+                </span>
+            </div>
+            <div class="actions"> 
+                <div class="item"> 
+                    <span class="info">
+                        <i class="material-icons">person_add</i>
+                    </span>
+                    <p>Industry</p>
+                </div>
+                <div class="item"> 
+                    <span class="info">
+                        <i class="material-icons">person_outline</i>
+                    </span>
+                    <p>Keyword</p>
+                </div>
+                <div class="item" (click)="openModal()"> 
+                    <span class="info">
+                        <i class="material-icons">more_horiz</i>
+                    </span>
+                    <p>Career Interest</p>
+                </div>
+            </div>
+            <div class="items"> 
+                <div class="item"> 
+                    <span>About</span>
+                    <i class="material-icons">keyboard_arrow_right</i>
+                </div>
+                <div class="item"> 
+                    <span>Members</span>
+                    <i class="material-icons">keyboard_arrow_right</i>
+                </div>
+                <div class="item"> 
+                    <span>Shortcuts</span>
+                    <i class="material-icons">keyboard_arrow_right</i>
+                </div>
+                <div class="item"> 
+                    <span>Shared Files</span>
+                    <i class="material-icons">keyboard_arrow_right</i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

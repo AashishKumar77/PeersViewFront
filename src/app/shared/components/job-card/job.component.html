@@ -1,0 +1,37 @@
+<div class="shared-job-card">
+  <div class="header">
+    <div class="logo">
+      <cl-image class="company-image"
+        public-id="{{job.company_logo ? job.company_logo : 'avatar'}}">
+        <cl-transformation width="50" height="50" gravity="custom">
+        </cl-transformation>
+      </cl-image>
+      <!-- <img src="/src/assets/images/company_logo.svg" alt="LOGO"/> -->
+    </div>
+    <div class="company">
+      <span class="name" [innerHtml]="trimStory(job.company, 30)"></span>
+      <span class="date">Apply by {{job.deadline | localDate}}</span>
+    </div>
+  </div>
+  <div>
+    <p class="title" [innerHtml]="trimStory(job.title, 40)"></p>
+  </div>
+  <div class="info-wrapper d_flex m-peersview-yt-2">
+    <div class="flex_1">
+      <img class="icon m-peersview-xr-1" src="https://res.cloudinary.com/peersview-com/image/upload/v1585225285/job_status_component_jub2oq.png" alt="icon" />
+      <span class="name">{{jobTypes[job.type]}}</span>
+    </div>
+    <div class="flex_1">
+      <img class="icon m-peersview-xr-1" src="https://res.cloudinary.com/peersview-com/image/upload/v1585225325/map-pin-5-line_chaco6.svg" alt="icon" />
+      <span class="name" [innerHtml]="trimStory(job.country, 13)"></span>
+    </div>
+  </div>
+  <div class="tags-wrapper d_flex flex_wrap m-peersview-y-2">
+    <span class="tag" *ngIf="job.industry">{{job.industry}}</span>
+    <!-- <span class="tag">Communication</span> -->
+  </div>
+  <div class="text-center actions">
+    <a class="d_block m-peersview-y-2" (click)="showJobDetail(job)">View Job</a>
+    <button class="btn-peersview-primary btn-lg" (click)="onSave(job)">Save</button>
+  </div>
+</div>

@@ -1,0 +1,35 @@
+<div class="job-status-item">
+    <div class="column1">
+        <div class="mb-25">
+            <p class="title">Job Title</p>
+            <span class="value text-ellipsis">{{job.title ? job.title : job.job.title}}</span>
+        </div>
+        <div>
+            <p class="title">Company Name</p>
+            <span class="value text-ellipsis">{{job.company ? job.company : job.job.company}}</span>
+        </div>
+    </div>
+    <div class="column2">
+        <div class="mb-25">
+            <p class="title">Date of Application</p>
+            <span class="value text-ellipsis">{{job.deadline ? job.deadline : job.job.deadline | localDate}}</span>
+        </div>
+        <div>
+            <p class="title">Job Description</p>
+            <span class="value jobfunction">{{job.jobfunction ? job.jobfunction : job.job.jobfunction}}</span>
+        </div>
+    </div>
+    <div class="column3">
+        <select class="change-status mb-25" [(ngModel)]="job.status">
+            <option disabled selected [value]="null">Change Status</option>
+            <option [value]="declined">Declined</option>
+            <option [value]="hired">Hired</option>
+            <option [value]="pending/applied">Pending/Applied</option>
+            <option [value]="tests">Tests</option>
+            <option [value]="interview">Interview</option>
+        </select>
+        <!-- <button class="status-button mb-25">Interview</button> -->
+        <button class="delete-button mb-25" (click)="deleteApplication()">Delete</button>
+        <a class="job-link" href="{{job.source_link ? job.source_link : job.job.source_link}}" target="_blank">Job Application Link</a>
+    </div>
+</div>

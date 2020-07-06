@@ -1,0 +1,48 @@
+<!-- <shared-navbar-component [active]="'job'"></shared-navbar-component> -->
+<div class="jobs-search-component">
+  <div class="container" id="jobs-search-component">
+    
+    <div class="content">
+      <a [routerLink]="['/job']" class="back-btn">
+        <i class="material-icons">keyboard_arrow_left</i>
+        Back to career 
+      </a>
+      <div class="title-section d_flex flex_wrap">
+        
+        <h1 class="title">Jobs you're looking for</h1>
+        <div class="d_flex">
+          <button *ngIf="user.userTypeId == 3" class="btn-peersview-primary btn-lg hidden-xs" (click)="onComposeJob()">Post a Job</button>
+          <div class="input-wrapper">
+            <input class="search-box" placeholder="Search Jobs" (keyup)="onKey($event)">
+            <img src="https://res.cloudinary.com/peersview-com/image/upload/v1585225195/filter_component_rwqzp3.png" class="filter-icon" (click)="openFilterModal()"/>
+            <!-- (click)="openFilterModal()" -->
+          </div>
+          <button class="btn-peersview-primary btn-lg desktop" (click)="onSearchJob()">Search</button>
+          <button class="btn-peersview-primary btn-lg mobile" (click)="onSearchJob()">
+            <i class="material-icons">search</i>
+          </button>
+        </div>
+      </div>
+      <div class="title-section d_flex flex_wrap">
+        <h1 class="title"></h1>
+        <div class="d_flex">
+        <div class="input-wrapper1">
+        <button class="button-save btn btn-white btn-lg" (click)="onSaved()">
+          <img class="icon" src="https://res.cloudinary.com/peersview-com/image/upload/v1584688361/file-list-3-line_u3it0j.svg"/>
+          
+          Saved</button>&nbsp;&nbsp;
+        <button class="button-save btn btn-white btn-lg" (click)="openFilterModal()">
+          <img class="icon" src="https://res.cloudinary.com/peersview-com/image/upload/v1586920321/edit-box-line_qidgxq.svg"/>
+          Preferences</button>
+        </div>  
+        
+      </div>
+    </div>
+      <div class="jobs-wrapper m-peersview-yt-3 d_flex flex_wrap">
+        <div class="job-item" *ngFor="let job of jobs">
+          <shared-job-card-component [job]="job"></shared-job-card-component>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

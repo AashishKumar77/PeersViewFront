@@ -1,0 +1,106 @@
+<!-- <shared-navbar-component [active]="'job'"></shared-navbar-component> -->
+<div class="job-career-evaluation-component">
+    <div class="top-bg">
+        <img src="https://res.cloudinary.com/peersview-com/image/upload/v1587048235/Group_287_t2mw0k.png"/>
+        <h1>Unlock Your Future</h1>
+        <a class="back" [routerLink]="['/job']">
+            <i class="material-icons">arrow_back</i>
+            Career Center
+        </a>
+    </div>
+    <div class="container">
+        <div class="evaluation-info">
+            <div class="left">
+                <div class="mb-30">
+                    <p>Career Interest Assessment</p>
+                    <span>
+                        You should know what skills, strengths and personality traits you bring to the workplace.
+                        Assessments can help you figure out these things. They are fun tools that show what you’re
+                        good at, and how well you match different occupations. No matter what your age or where you
+                        are in your career, you can benefit from taking a skills or interest assessment.
+                    </span>
+                </div>
+                <div>
+                    <p>Tips for taking this assessment</p>
+                    <span>
+                        Remember, this is not a test! In fact, don't think too much. You'll get the best results if
+                        you answer each of the questions honestly.
+                    </span>
+                </div>
+            </div>
+            <div class="right">
+                <p>Remember</p>
+                <ul>
+                    <li>Don’t panic if an assessment shows you careers that you don’t like.</li>
+                    <li>Take a few assessments before making your career decision.</li>
+                    <li>Talk with an adviser . Discuss your options with family and friends.</li>
+                    <li>The goal is to get you thinking about careers that you might enjoy</li>
+                </ul>
+            </div>
+        </div>
+        <div>
+            <h1>Choose The Best Fit,Do You?</h1>
+            <div class="checklist-wrapper">
+                <div class="checkitem" *ngFor="let item of evalustionData">
+                    <div>
+                        {{item.name}} &nbsp;
+                        <input type="checkbox" [(ngModel)]="item.checked"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <button class="btn-peersview-primary btn-peersview-md calc-btn" style="display: none;" (click)="calcEvaluation()">Calculate Results</button>
+        </div>
+        <div class="calc-result">
+            <div *ngFor="let item of evaluationResultArray" class="result-item">
+                <span class="key">{{item.key}}</span>
+                <div>
+                    <span *ngFor="let item1 of item.value" class="item">{{item1}}</span>
+                </div>
+            </div>
+        </div>
+        <div class="result-section" style="display: none;">
+            <div class="description">
+                <h2>Your Interest Assessment Results</h2>
+                <!-- <p>Realistic</p>
+                <p>Investigative</p>
+                <p>Artistic</p>
+                <p>Social</p>
+                <p>Enterprising</p>
+                <p>Conventional</p> -->
+
+                <h3><span>Realistic people</span> are DOERS. </h3>
+                <p>
+                    They are often good at mechanical or athletic jobs. They like to work with things like machines,
+                    tools or plants. They like to work with their hands. They are practical and good at solving problems.
+                </p>
+                <h3><span>Investigative people</span> are THINKERS.</h3>
+                <p>
+                    They like to watch, learn and solve problems. They often like to work alone. They tend to be good at
+                    math or science, and like analyzing data.
+                </p>
+                <h3><span>Artistic people</span> are CREATORS.</h3>
+                <p>
+                    They like to have the freedom to use their creativity to come up with new ideas. They often enjoy
+                    performing (theater or music) and the visual arts.
+                </p>
+                <h3><span>Social people</span> are HELPERS.</h3>
+                <p>
+                    They like to work with people more than with things. They enjoy training, counseling or curing people.
+                    They are often good public speakers. They have helpful, empathetic personalities.
+                </p>
+                <h3><span>Enterprising people</span> are PERSUADERS.</h3>
+                <p>
+                    They like to work with other people. They like to influence, lead and perform. They are often assertive
+                    and full of energy.
+                </p>
+                <h3><span>Conventional people</span> are ORGANIZERS.</h3>
+                <p>
+                    They are good with details and like to work with data. They have good organizing skills and like
+                    working in structured situations. They often work well with numbers. They are also good at following instructions.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+.about-us-how-it-is-started-component {
+  .details-info p {
+    font-size: 2rem;
+  }
+
+
+
+
+
+  .details-info h1 {
+    letter-spacing: 1.44px;
+    font-size: 4rem;
+    font-weight: 600;
+  }
+  // Custom, iPhone Retina
+  @media only screen and (min-width : 320px) {}
+  // extra Small Devices, Phones
+  @media only screen and (min-width : 480px) {}
+  // Small Devices, Tablets
+  @media only screen and (min-width : 768px) {
+    .container {
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+    }
+  }
+  // Medium Devices, Desktops
+  @media only screen and (min-width : 992px) {}
+  // Large Devices, Wide Screens
+  @media only screen and (min-width : 1200px) {}
+}

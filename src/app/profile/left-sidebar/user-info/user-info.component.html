@@ -1,0 +1,56 @@
+<div class="profile-left-sidebar-user-info-component">
+  <div class="user text-center">
+    <cl-image
+      public-id="{{user.socialImage ? (user.profilePicture === 'avatar' ? user.socialImage: user.profilePicture): user.profilePicture}}"
+      *ngIf="user?.profilePicture" 
+      [ngStyle]="{'border-radius': '5%', height: '18rem'}"
+      (click)="onOpenShowImageDialogComponent(user)">
+      <cl-transformation width="120" height="120" radius="max" gravity="custom" crop="thumb">
+      </cl-transformation>
+    </cl-image>
+    <div routerLink="/account-settings/general" class="edit-icon material-icons color-purple profile-add-icon"
+      *ngIf="isUserProfile">
+    </div>
+
+    
+
+    <h2 style="font-size: 22px;">{{user?.firstName}} {{user?.lastName}}</h2>
+    <shared-user-rating [userCredits]="user.userCredits && user.userCredits[0]"></shared-user-rating>
+    <div *ngIf="!isUserProfile" class="connect-btn-container">
+      <a 
+        class="peersview-primary-color m-peersview-xr-2 "
+         (click)="onOpenMessageDiaglogComponent()">
+        <i class="material-icons msg-icon">comment</i>
+        <!-- Message -->
+      </a>
+      <div>
+        <input
+        type="button"
+        *ngIf="!isUserProfile"
+        class="btn btn-white follow-btn connect-btn"
+        [value]="followStatus"
+        [ngClass]="{'followed-btn' : followed}"
+        (click)="onClickFollowButton()"
+      /> 
+      </div>
+
+
+
+      <div *ngIf="!isUserProfile" class="dropdown">
+        <button class="flat-btn purple pull-right dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">
+          <i class="material-icons" style="position: relative;
+        top: 0.5rem; margin-left: 3.2rem;">more_vert</i>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-right">
+          <li><a>Block User</a></li>
+          <li><a>Report User</a></li>
+        </ul>
+      </div>
+   </div>
+
+    <div class=" hidden-xs hidden-sm connections">
+      <shared-followee-component [followees]="followees"></shared-followee-component>
+    </div>
+  </div>
+</div>

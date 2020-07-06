@@ -1,0 +1,191 @@
+<div class="compose-job-component">
+  <div class="container">
+    <form [formGroup]="jobComposeForm" (ngSubmit)="onSave()">
+      <div class="title">
+        <h1>Post a job listing</h1>
+      </div>
+      <div class="form-content d_flex">
+        <div class="left-fields flex_1">
+         
+          <div class="form-group">
+            <label>Company Name:</label>
+            <input type="text" formControlName="company" class="form-control">
+            <div *ngIf="f.company.touched && f.company.errors" class="validation-error">
+              <div *ngIf="f.company.errors.required">
+                Company Name is required.
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Job Title:</label>
+            <input type="text" formControlName="title" class="form-control">
+            <div *ngIf="f.title.touched && f.title.errors" class="validation-error">
+              <div *ngIf="f.title.errors.required">
+                Job title is required.
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Type:</label>
+            <select formControlName="type" class="form-control">
+              <option value="0">Full-Time</option>
+              <option value="1">Part-Time</option>
+              <option value="2">Internship</option>
+              <option value="3">Graduate Role</option>
+              <option value="4">Co-op</option>
+            </select>
+            <div *ngIf="f.type.touched && f.type.errors" class="validation-error">
+              <div *ngIf="f.type.errors.required">
+                Type is required.
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Contact Information:</label>
+            <input type="text" formControlName="contact" class="form-control">
+            <div *ngIf="f.contact.touched && f.contact.errors" class="validation-error">
+              <div *ngIf="f.contact.errors.required">
+                Contact information is required.
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Application Deadline:</label>
+            <mat-form-field>
+              <input matInput formControlName="deadline" placeholder="Deadline" [matDatepicker]="picker1" name="from" [value]="form.deadline">
+              <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+              <mat-datepicker #picker1></mat-datepicker>
+            </mat-form-field>
+            <div *ngIf="f.deadline.touched && f.deadline.errors" class="validation-error">
+              <div *ngIf="f.deadline.errors.required">
+                Application deadline is required.
+              </div>
+            </div>
+          </div>
+          <div class="form-group salary">
+            <label>Offer/Salary:</label>
+            <div class="price-wrapper">
+              <input type="text" formControlName="price" class="form-control">
+              <select [(ngModel)]="form.currency" [ngModelOptions]="{standalone: true}" class="form-control">
+                <option value="$">$</option>
+                <option value="£">£</option>
+              </select>
+            </div>
+            <div *ngIf="f.price.touched && f.price.errors" class="validation-error">
+              <div *ngIf="f.price.errors.required">
+                Offer/Salary is required.
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Source Link:</label>
+            <input type="text" formControlName="source_link" class="form-control">
+            <div *ngIf="f.source_link.touched && f.source_link.errors" class="validation-error">
+              <div *ngIf="f.source_link.errors.required">
+                Source link is required.
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Country:</label>
+            <select class="form-control" formControlName="country" name="country">
+              <option selected="selected" disabled>Select Country</option>
+              <option *ngFor="let country of countries" value={{country.name}}>{{country.name}}</option>
+            </select>
+            <div *ngIf="f.country.touched && f.country.errors" class="validation-error">
+              <div *ngIf="f.country.errors.required">
+                Country is required.
+              </div>
+            </div>
+          </div>
+          <div class="form-group" *ngIf="f.country.value == 'Canada'">
+            <label>Province:</label>
+            <select class="form-control" formControlName="province" name="province">
+              <option selected="selected" disabled>Select Province</option>
+              <option *ngFor="let province of provinces" value={{province}}>{{province}}</option>
+            </select>
+            <div *ngIf="f.province.touched && f.province.errors" class="validation-error">
+              <div *ngIf="f.province.errors.required">
+                Province is required.
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>City:</label>
+            <input type="text" formControlName="city" class="form-control">
+            <div *ngIf="f.city.touched && f.city.errors" class="validation-error">
+              <div *ngIf="f.city.errors.required">
+                City is required.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="right-fields flex_1">
+          <div class="form-group">
+            <label>Industry:</label>
+            <!-- <div class="form-control industry">
+              <span *ngFor="let industry of industries">{{industry.name}}</span>
+            </div> -->
+            <select class="form-control" formControlName="industryId" name="industry">
+              <option selected="selected" disabled>Select Industry</option>
+              <option *ngFor="let item of industries" value={{item.id}}>{{item.name}}</option>
+            </select>
+            <div *ngIf="f.industryId.touched && f.industryId.errors" class="validation-error">
+              <div *ngIf="f.industryId.errors.required">
+                Industry is required.
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Brief Company Bio:</label>
+            <textarea type="text" formControlName="company_bio" class="form-control"></textarea>
+            <span class="text-limit">{{form.company_bio ? form.company_bio.length : 0}}/512</span>
+            <div *ngIf="f.company_bio.touched && f.company_bio.errors" class="validation-error">
+              <div *ngIf="f.company_bio.errors.required">
+                Brief Company Bio is required.
+              </div>
+            </div>
+          </div>
+
+          <!-- <div class="form-group">
+              <label>Experience:</label>
+              <textarea type="text" [(ngModel)]="form.experience" [ngModelOptions]="{standalone: true}" #experience="ngModel" class="form-control" required></textarea>
+              <div *ngIf="experience.invalid && (experience.dirty || experience.touched)" class="validation-error">
+                <div *ngIf="experience.errors.required">
+                  Experience is required.
+                </div>
+              </div>
+            </div> -->
+          <div class="form-group">
+            <label>Job Function:</label>
+            <textarea type="text" formControlName="jobfunction" class="form-control"></textarea>
+            <span class="text-limit">{{form.jobfunction ? form.jobfunction.length : 0}}/512</span>
+            <div *ngIf="f.jobfunction.touched && f.jobfunction.errors" class="validation-error">
+              <div *ngIf="f.jobfunction.errors.required">
+                Job function is required.
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Company Logo:</label>
+            <shared-upload-image-component
+              [uploadOptions]="{'queueLimit': 1, 'event': 'changeCompanyLogoPic'}"
+              (uploadComplete)="onUploadComplete($event)"
+              (imageIsSelected)="onImageSelected($event)"
+            ></shared-upload-image-component>
+            <div *ngIf="!imageSelected && isSubmitted" class="validation-error">
+              <div>
+                Company logo is required.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="button-wrapper">
+        <button type="submit" class="btn-peersview-primary btn-peersview-md">Create</button>
+      </div>
+    </form>
+  </div>
+</div>

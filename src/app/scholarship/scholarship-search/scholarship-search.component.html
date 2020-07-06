@@ -1,0 +1,51 @@
+<div class="scholarship-search-result-component">
+  <div class="container">
+      <div class="empty-content" *ngIf="false">
+        <div class="title">
+          <h1 class="">Sorry, your search returned no results.</h1>
+        </div>
+        <!-- <h3 class="hidden-md hidden-lg small-device">Find Scholarships and Internship Opportunities in Your City</h3> -->
+        <div class="desc-wrapper">
+          <span class="desc">
+            Please widen your search criteria or set up <span style="color: purple;">scholarship alert</span> to receive any new scholarship, that match your search directly into your inbox.
+          </span>
+        </div>
+      </div>
+      <div class="scholarship-list-wrapper">
+        <a class="back-btn" [routerLink]="['/job']">
+          <i class="material-icons">keyboard_arrow_left</i>
+         Back to Career Center
+      </a>
+         <div class="title">
+          <h1 class="">Scholarships, Research and Educational Opportunities </h1>
+        </div>
+        <div class="scholarship-search-wrapper">
+          <form>
+            <div class="search-content">
+                <input type="text" [(ngModel)]="scholarshipTitle" class="form-control m-peersview-xr-1" [ngModelOptions]="{standalone: true}" placeholder="Title">
+                <input type="text" [(ngModel)]="region" class="form-control m-peersview-xl-1" [ngModelOptions]="{standalone: true}" placeholder="Region, Country ...">
+                <button (click)="searchScholarships()"><i class="material-icons">search</i></button>
+            </div>
+            <div class="filter-search-button">
+              <div class="filter-content">
+                <!-- <span class="filter-item m-peersview-xr-1" [ngClass]="{active: isFulltimeFilter}" (click)="toggleFilterType(0)">Full-Time Scholarship</span>
+                <span class="filter-item m-peersview-xr-1" [ngClass]="{active: isParttimeFilter}" (click)="toggleFilterType(1)">Part-Time Scholarship</span>
+                <span class="filter-item m-peersview-xr-1" [ngClass]="{active: isIntershipFilter}" (click)="toggleFilterType(2)">Internship</span> -->
+                <span class="filter-item btn m-peersview-xr-1" (click)="openFilterModal()">
+                  <i></i>
+                  Filters
+                </span>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="scholarship-list">
+          <shared-scholarship-component [items]="scholarships" [user]="user" 
+            [route]="{
+              'name': 'scholarship'
+            }">
+          </shared-scholarship-component>
+        </div>
+      </div>
+  </div>
+</div>

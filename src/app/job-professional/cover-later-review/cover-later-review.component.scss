@@ -1,0 +1,111 @@
+
+.job-resume-review-component {
+ padding-top: 80px;
+  padding-bottom: 30px;
+  .slogan{
+    color: #ffffff;
+    text-align: center;
+    font-weight: bold;
+    font-size: 44px;
+    position: absolute;
+    top: 8rem;
+    width: 100%;
+      }
+
+  // .back-cover {
+  //   background: url('https://res.cloudinary.com/peersview-com/image/upload/v1587048235/Group_287_t2mw0k.png') no-repeat;
+  //   background-size: contain; 
+  //   background-position: center;
+  //  // background-size: 90%;
+  //   height: auto;
+  // }
+
+  // .slogan-background {
+  //   padding-top: 24rem;
+  //   padding-bottom: 17rem;
+  //   .slogan{
+  //     color: #ffffff;
+  //     text-align: center;
+  //     font-weight: bold;
+  //     font-size: 44px;
+  //   }
+  // }
+
+.top-section {
+  
+  text-align: center;
+  position: relative;
+  .back {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    color: white;
+    font-weight: bold;
+    position: absolute;
+    top: 40px;
+    left: 55px;
+
+    i {
+      font-size: 20px;
+      margin-right: 5px;
+    }
+  }
+  .top-bg-image {
+    height: 400px;
+    background-color: gray;
+
+    img {
+      object-fit: cover;
+    }
+  }
+}
+
+.mddile-container{
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+}
+.middle-title{
+  color:#340e49;
+  text-align: center;
+  
+}
+button{
+  background-color: #340e49;
+  color: white;
+}
+
+.middle-btn{
+    padding: 0.7rem;
+    border: none;
+    border-radius: 0.3rem;
+}
+.middle-content{
+  word-break: break-word;
+  text-align: center;
+  width: 62%;
+}
+.resume-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    .box-title{
+      color:#340e49;
+      margin-left: 2rem;
+    }
+
+    .upload-section{
+      border-radius: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #9e9e9e45;
+      height: 40rem;
+      width: 35rem;
+      margin: 2rem;
+    }
+}
+}

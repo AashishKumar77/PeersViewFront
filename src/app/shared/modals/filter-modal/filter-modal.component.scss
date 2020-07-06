@@ -1,0 +1,87 @@
+.job-filter-modal {
+   
+
+    .modal-heading {
+        margin-top: 0px;
+    }
+
+    .modal-body {
+        padding-left: 0px;
+        padding-right: 0px;
+
+        h4 {
+            margin-top: 20px;
+        }
+        
+        .filter-content {
+            padding-top: 10px;
+            display: flex;
+            flex: 1;
+            flex-wrap: wrap;
+            padding: 10px;
+            border: 1px solid #340e49;
+            border-radius: 4px;
+            height: 185px;
+            overflow-y: auto;
+            
+            .filter-item {
+                padding: 6px 10px;
+                border-radius: 20px;
+                border: 1px solid #bc43ff;
+                color: #bc43ff;
+                line-height: 20px;
+                margin-bottom: 10px;
+                white-space: nowrap;
+                cursor: pointer;
+
+                &.active {
+                    background-color: #bc43ff;
+                    color: white;
+                }
+            }
+        }
+
+        .checkbox-item {
+            display: flex;
+            padding-top: 5px;
+
+            input {
+                margin-right: 5px;
+            }
+        }
+    }
+
+    .modal-footer {
+        // padding-left: 0px;
+        // padding-right: 0px;
+        // padding-bottom: 0px;
+        .btn-apply-filters{
+            background-color: #340e49;
+            color: white;
+            border: none;
+            padding: 7px 25px;
+            border-radius: 5px;
+        }
+
+        .btn-cancel {
+            background-color: #adadad;
+            color: #340e49;
+            border: none;
+            padding: 7px 25px;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+    }
+
+    .flex {
+        display: flex;
+
+        .datepicker-wrapper {
+            flex: 0 1 50%;
+
+            label {
+                margin-right: 10px;
+            }
+        }
+    }
+}

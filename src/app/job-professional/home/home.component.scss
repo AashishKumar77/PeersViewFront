@@ -1,0 +1,209 @@
+.job-premium-home-component {
+  padding-top: 80px;
+  padding-bottom: 30px;
+
+  .top-section {
+    text-align: center;
+    // .profile-image {
+    //   height: 400px;
+    //   background-color: gray;
+
+    //   img {
+    //     object-fit: cover;
+    //   }
+    // }
+    .profile-image {
+    position: relative;
+
+      img {
+        object-fit: cover;
+        width: 100%;
+        max-height: 500px;
+        // margin-top: -100px;
+      }
+    }
+    .company-avatar {
+      width: 300px;
+      height: 200px;
+      margin: auto;
+      margin-top: -100px;
+      background-color: green;
+      border-radius: 20px;
+      position: relative;
+
+      img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        // margin-top: -100px;
+      }
+    }
+
+    .social-links {
+      margin-top: 20px;
+      span {
+        display: inline-block;
+        line-height: 34px;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: #b8aabf;
+        margin-right: 20px;
+
+        &:last-child {
+          margin-right: 0px;
+        }
+      }
+    }
+  }
+  .container{
+    margin-top: 60px;
+  }
+  .progress-info {
+    margin-top: 65px;
+    margin-bottom: 65px;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 20px #25252530;
+    h1 {
+      font-weight: bold;
+      color: #1e1e22;
+      margin-top: 10px;
+    }
+    
+    .items-wrapper {
+      justify-content: center;
+      margin-top: 40px;
+
+      .item {
+        width: 275px;
+        text-align: center;
+        margin: 10px;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0px 5px 20px #25252530;
+
+        span {
+          padding: 15px;
+          background-color: #d280ff;
+          display: inline-block;
+          border-radius: 10px;
+        }
+
+        .text {
+          font-size: 18px;
+          font-weight: bold;
+          color: #1e1e22;
+          margin-top: 30px;
+          margin-bottom: 20px;
+        }
+
+        .count {
+          font-size: 42px;
+          font-weight: bold;
+          color: #53d769;
+        }
+      }
+    }
+  }
+  .slogan{
+    color: #340e49;
+    text-align: center;
+    font-weight: bold;
+    font-size: 22px;
+  }
+  .services {
+    margin-left: -10px;
+    margin-right: -10px;
+    display: flex;
+    padding-top: 20px;
+    flex-wrap: wrap;
+
+    .item {
+      flex: 0 1 33.33%;
+      padding: 10px;
+
+      img {
+        width: 100%;
+      }
+
+      .card {
+        width: 100%;
+        padding-top: 70%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        border-radius: 10px;
+        overflow: hidden;
+
+        .backdrop {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          left: 0px;
+          top: 0px;
+          background-color: #0000007a;
+        }
+
+        p {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          color: white;
+          font-size: 27px;
+          font-weight: bold;
+          text-align: center;
+        }
+      }
+    }
+
+    .bg1 {
+      background-image: url("https://res.cloudinary.com/peersview-com/image/upload/v1584475188/ben-white-mO9vKbG5csg-unsplash_bmouwf.jpg");
+    }
+
+    .bg2 {
+      background-image: url("https://res.cloudinary.com/peersview-com/image/upload/v1585061473/freshh-connection-HJckKnwCXxQ-unsplash_1_y3u13w.jpg");
+    }
+
+    .bg3 {
+      background-image: url("https://res.cloudinary.com/peersview-com/image/upload/v1584475381/tim-van-der-kuip-CPs2X8JYmS8-unsplash_vjnv14.jpg");
+    }
+
+    .bg4 {
+      background-image: url("https://res.cloudinary.com/peersview-com/image/upload/v1584475318/christin-hume-Hcfwew744z4-unsplash_uy5xko.jpg");
+    }
+
+    .bg5 {
+      background-image: url("https://res.cloudinary.com/peersview-com/image/upload/v1587025800/events_xaqfvj.png")
+    }
+
+    .bg6 {
+      background-image: url("https://res.cloudinary.com/peersview-com/image/upload/v1587025800/digital_campus_cr4hra.png")
+    }
+  }
+  @media (max-width: 991px) {
+    .container {
+        margin-top: 54px;
+    }
+
+    .services {
+      flex-wrap: wrap;
+      .item {
+        flex: 0 1 50%;
+      }
+    }
+  }
+
+  @media only screen and (max-width : 768px) {
+    .items-wrapper {
+      display: block;
+
+      .item {
+        margin: 10px auto !important;
+      }
+    }
+  }
+}
+

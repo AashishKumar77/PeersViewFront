@@ -1,0 +1,48 @@
+<div class="shared-job-component">
+  <h2 class="no-post-yet text-center" *ngIf="jobs.length === 0">
+    {{notJobMessage}}
+  </h2>
+
+  <div class="job-item" *ngFor="let job of jobs">
+    <div class="job-title-wrapper">
+      <h3 class="job-title" (click)="showJobDetail(job)">{{job.title}}</h3>
+      <a data-toggle="tooltip" title="Report this job">
+        <i class="material-icons">flag</i>
+      </a>
+    </div>
+    <div class="job-item-content">
+      <div class="status-wrapper">
+          <!-- <p class="status-item">
+            <i class="material-icons">public</i>
+            <span>internship</span>
+          </p> -->
+          <p class="status-item">
+            <i class="material-icons">location_city</i>
+            <span>{{job.country}}</span>
+          </p>
+      </div>
+      <div class="price-deadline">
+        <p class="status-item deadline">
+          <b>Apply by:</b> {{job.deadline | localDate}}
+        </p>
+        <p class="status-item">
+          <!-- {{job.currency + job.price}} -->
+        </p>
+      </div>
+      <p class="html-content-wrapper" [innerHtml]="trimStory(job.jobfunction, 500)" class="job-description">
+      </p>
+    </div>
+    <div class="actions-wrapper">
+      <!-- <a class="view-job-btn" href="{{job.source_link}}" target="_blank">View Job</a> -->
+      <a class="view-job-btn" (click)="showJobDetail(job)">View Job</a>
+      <a *ngIf="job.userId==currentUser.id" class="view-job-btn" (click)="onEditJob(job.id)" style="margin-left: 10px;background-color: brown;">Edit Job</a>
+      <a *ngIf="job.userId==currentUser.id" class="view-job-btn" (click)="onDeleteJob(job.id)" style="margin-left: 10px;background-color: #8e8b8b;">Delete Job</a>
+    </div>
+  </div>
+  <div class="load-more" *ngIf="jobs.length !== 0">
+    <button type="button" class="btn-peersview-secondary btn-block btn-peersview-md" (click)="onLoadMoreJob()"
+      [disabled]="isLoadingMoreJobs">
+      {{btnLoadMoreText}}
+    </button>
+  </div>
+</div>

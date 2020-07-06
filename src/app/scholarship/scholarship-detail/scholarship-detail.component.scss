@@ -1,0 +1,70 @@
+.scholarship-detail-component {
+  padding-top: 80px;
+
+  .back-btn {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+  }
+
+  .scholarship-content {
+    .info {
+      display: flex;
+      margin-top: 24px;
+      flex-wrap: wrap;
+
+      .status-item {
+        display: flex;
+        align-items: center;
+        margin-right: 20px;
+        color: grey;
+
+        .material-icons {
+          margin-right: 3px;
+        }
+      }
+      
+      .city-company {
+        flex: 1;
+        text-align: left;
+      }
+      .under-txt {
+        font-weight: bold;
+        float: left;
+      }
+      .price-deadline {
+        text-align: right;
+        width: 141px;
+      }
+      span{
+        display: block;
+      }
+    }
+
+    hr {
+      border-top: 1px solid #b5b5b5;
+    }
+
+    .content {
+      p {
+        margin-top: 20px;
+        font-weight: bold;
+      }
+
+      span {
+        white-space: pre-line;
+      }
+    }
+
+    .apply-btn {
+      background-color: #631a90;
+      color: white;
+    }
+  }
+  @media (max-width: 991px) {
+    .container {
+        margin-top: 54px;
+    }
+  }
+}
+

@@ -1,0 +1,40 @@
+<!-- <shared-navbar-component [active]="'job'"></shared-navbar-component> -->
+<div class="job-events-component">
+    <div class="top-section"> 
+        <div class="profile-image">
+            <img />
+        </div>
+        <a class="back" [routerLink]="['/job-professional']">
+            <i class="material-icons">arrow_back</i>
+            Career Center
+        </a>
+    </div>
+    <div class="container">
+        <div class="services">
+            <a class="item" *ngFor="let event of eventData">
+                <div class="card" [routerLink]="['/job/search']">
+                    <img [src]="event.image"/>
+                    <!-- <div class="backdrop"></div> -->
+                    <div class="info"> 
+                        <div class="title-info"> 
+                            <p class="title">{{event.title}}</p>
+                            <p class="date"> 
+                                Monday, 09 FEB, 2020
+                            </p>
+                            <p class="time"> 
+                                10:00 AM - 10:00 AM
+                            </p>
+                        </div>
+                        <div class="date-info"> 
+                            <p class="month">FEB</p>
+                            <p class="day">09</p>
+                        </div>
+                    </div>
+                    <div> 
+                        <button class="btn-peersview-primary btn-peersview-md">Go To Event</button>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>

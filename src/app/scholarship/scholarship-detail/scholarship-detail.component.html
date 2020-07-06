@@ -1,0 +1,52 @@
+<div class="scholarship-detail-component">
+  <div class="container">
+    <a [routerLink]="['/scholarship']" class="back-btn">
+      <i class="material-icons">keyboard_arrow_left</i>
+      Back to Scholarships List
+    </a>
+    <div class="scholarship-content" *ngIf="scholarship">
+      <div>
+        <h3 class="scholarship-title">{{scholarship.title}}</h3>
+        <div class="info">
+          <div class="status-wrapper">
+            <p class="status-item">
+              <i class="material-icons">web</i>
+              <span>{{scholarshipTypes[scholarship.type]}}</span>
+            </p>
+          </div>
+          <div class="status-wrapper">
+            <p class="status-item">
+              <i class="material-icons">local_atm</i>
+              <span>{{scholarship.currency + ' ' + scholarship.price}}</span>
+            </p>
+          </div>
+          <div class="status-wrapper">
+            <p class="status-item">
+              <i class="material-icons">event_available</i>
+              <span>{{scholarship.deadline | localDate}}</span>
+            </p>
+          </div>
+        </div>
+        <hr/>
+        <div class="content">
+          <p>Details</p>
+          <span>
+            {{scholarship.details}}
+          </span>
+          <p>Eligibility requirements</p>
+          <span>
+            {{scholarship.eligibility_requirements}}
+          </span>
+          <p>Benefits</p>
+          <span>
+            {{scholarship.benefits}}
+          </span>
+        </div>
+      </div>
+      <hr/>
+      <div>
+        <a class="apply-btn btn-peersview-md" href="{{scholarship.source_link}}" target="_blank">Apply</a>
+      </div>
+    </div>
+  </div>
+</div>

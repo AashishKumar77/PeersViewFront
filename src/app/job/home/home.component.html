@@ -1,0 +1,74 @@
+<!-- <shared-navbar-component [active]="'job'"></shared-navbar-component> -->
+<div class="job-home-component">
+    <div
+        class="back-cover align-items-center">
+        <div
+            class="slogan-background">
+            <div class="slogan">
+                Welcome To The Career Centre!
+            </div>
+            <h4 class="sub-title">Tell us about your skills, strengths and personality traits. And we would match you to opportunities.</h4>
+
+        </div>
+    </div>
+    <div class="container">
+        <!-- <div class="progress-info">
+            <h1>Your Progress</h1>
+            <div class="items-wrapper d_flex">
+                <div class="item">
+                    <span>
+                        <img
+                            src="https://res.cloudinary.com/peersview-com/image/upload/v1584688417/search-line-1_hijqlb.svg" />
+                    </span>
+                    <p class="text">Job Searches Run</p>
+                    <p class="count">42</p>
+                </div>
+                <div class="item">
+                    <span>
+                        <img
+                            src="https://res.cloudinary.com/peersview-com/image/upload/v1584688417/search-line-1_hijqlb.svg" />
+                    </span>
+                    <p class="text">Jobs Viewed</p>
+                    <p class="count">252k</p>
+                </div>
+                <div class="item">
+                    <span>
+                        <img
+                            src="https://res.cloudinary.com/peersview-com/image/upload/v1584688417/search-line-1_hijqlb.svg" />
+                    </span>
+                    <p class="text">Jobs Accepted</p>
+                    <p class="count">06</p>
+                </div>
+            </div>
+        </div> -->
+
+        <div class="row services justify-content-center">
+            <a class="item">
+                <div class="card bg3" [routerLink]="['/job/career-evaluation']">
+                    <div class="backdrop"></div>
+                </div>
+                <h4 class="text" [routerLink]="['/job/career-evaluation']">Explore  Career Paths</h4>
+            </a>
+            <a class="item">
+                <div class="card bg4" [routerLink]="['/job/search']">
+                    <div class="backdrop"></div>
+                </div>
+                <h4 class="text" [routerLink]="['/job/search']">Find a Job</h4>
+
+            </a>
+            <a class="item">
+                <div class="card bg2" [routerLink]="['/scholarship']">
+                    <div class="backdrop"></div>
+                </div>
+                <h4 class="text" [routerLink]="['/scholarship']">Scholarships, Research opportunities and Professional qualifications.</h4>
+            </a>
+            
+            <a class="item">
+                <div class="card bg1" [routerLink]="['/job/career-resources']">
+                    <div class="backdrop"></div>
+                </div>
+                <h4 class="text" [routerLink]="['/job/career-resources']">Career Fairs & Events</h4>
+            </a>
+        </div>
+    </div>
+</div>

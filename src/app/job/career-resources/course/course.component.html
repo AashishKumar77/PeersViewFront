@@ -1,0 +1,59 @@
+<!-- <shared-navbar-component [active]="'job'"></shared-navbar-component> -->
+<div class="job-career-resources-course-component">
+    <div class="top-section">
+        <div class="profile-image">
+            <img src="{{course.image}}"/>
+            <h1>{{course.title}}</h1>
+        </div>
+        <a class="back" [routerLink]="['/job/career-resources']">
+            <i class="material-icons">arrow_back</i>
+            Career Resource
+        </a>
+    </div>
+    <div class="container">
+        <div class="services">
+            <a class="item">
+                <div class="card" [routerLink]="['/job/career-evaluation']">
+                    <img src="https://res.cloudinary.com/peersview-com/image/upload/v1587051362/Group_132_lzzxcm.png"/>
+                    <div class="backdrop"></div>
+                    <p>Sample Interview Question and Answers</p>
+                </div>
+            </a>
+            <a class="item">
+                <div class="card" [routerLink]="['/job/sample-resume']">
+                    <img src="https://res.cloudinary.com/peersview-com/image/upload/v1587048232/Group_131_dnisbi.png"/>
+                    <div class="backdrop"></div>
+                    <p>Sample Resume</p>
+                </div>
+            </a>
+            <a class="item">
+                <div class="card" [routerLink]="['/job/status']">
+                    <img src="https://res.cloudinary.com/peersview-com/image/upload/v1587048011/Group_130_mmlkpl.png"/>
+                    <div class="backdrop"></div>
+                    <p>Sample Cover Letter</p>
+                </div>
+            </a>
+            <a class="item">
+                <div class="card padding-img" [routerLink]="['/job/market-outlook']">
+                    <img src="https://res.cloudinary.com/peersview-com/image/upload/v1584475188/ben-white-mO9vKbG5csg-unsplash_bmouwf.jpg"/>
+                    <div class="backdrop"></div>
+                    <p>Market Outlook</p>
+                </div>
+            </a>
+            <a class="item">
+                <div class="card padding-img" [routerLink]="['/job/employability-assessment']">
+                    <img  style="filter: brightness(0.5); "src="https://res.cloudinary.com/peersview-com/image/upload/v1584475381/tim-van-der-kuip-CPs2X8JYmS8-unsplash_vjnv14.jpg" />
+                    <div class="backdrop"></div>
+                    <p>Employability Assessment</p>
+                </div>
+            </a>
+            <a class="item">
+                <div class="card" [routerLink]="['/job/mock-interview']">
+                    <img src="https://res.cloudinary.com/peersview-com/image/upload/v1587048011/Group_127_i4o8ox.png"/>
+                    <div class="backdrop"></div>
+                    <p>Mock video Interviews</p>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>

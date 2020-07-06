@@ -1,0 +1,29 @@
+.about-us-community-component {
+  color: #ffffff;
+  background: #340E49 0% 0% no-repeat padding-box;;
+  // background-size: cover;
+  padding: 50px 0;
+  h1 {
+    font-size: 6rem;
+  }
+
+  .winners {
+    background: url('https://res.cloudinary.com/peersview-com/image/upload/v1586312346/undraw_winners_ao2o_1_qax09w.svg') no-repeat;
+    height: 350px;
+    background-size: contain;
+  }
+  // Custom, iPhone Retina
+  @media only screen and (min-width : 320px) {}
+  // extra Small Devices, Phones
+  @media only screen and (min-width : 480px) {}
+  // Small Devices, Tablets
+  @media only screen and (min-width : 768px) {
+    h1 {
+      font-size: 8rem;
+    }
+  }
+  // Medium Devices, Desktops
+  @media only screen and (min-width : 992px) {}
+  // Large Devices, Wide Screens
+  @media only screen and (min-width : 1200px) {}
+}

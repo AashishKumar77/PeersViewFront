@@ -1,0 +1,137 @@
+.jobs-pub-component {
+  height: 100%;
+
+  shared-navbar-unauth-component {
+    .btn-lg {
+      color: black;
+  
+      &.sign-in {
+        color: white;
+      }
+    }
+  }
+
+  .content {
+    margin-top: 40px;
+
+    .title-section {
+      align-items: center;
+
+      .title {
+        margin: 0px;
+        font-size: 34px;
+        line-height: 40px;
+        color: #320f49;
+        flex: 1;
+      }
+
+      .input-wrapper {
+        position: relative;
+        margin-right: 5px;
+        width: 350px;
+
+        input {
+          height: 43px;
+          width: 100%;
+          border-radius: 5px;
+          padding: 5px 10px;
+          border: 1px solid #631990;
+        }
+
+        .filter-icon {
+          position: absolute;
+          right: 10px;
+          top: 9px;
+        }
+      }
+      
+      button {
+        border-radius: 5px;
+        height: 43px;
+      }
+    }
+
+    .jobs-wrapper {
+      // display: flex;
+      // flex-wrap: wrap;
+      margin-left: -10px;
+      margin-right: -10px;
+
+      .job-item {
+        flex: 0 1 33.33%;
+        padding: 10px;
+        min-width: 385px;
+      }
+    }
+  }
+  .desktop {
+    display: block;
+  }
+
+  .mobile {
+    display: none;
+  }
+  @media screen and (max-width: 1200px) {
+    .job-item {
+      flex: 0 1 50% !important;
+      margin: auto;
+    }
+  }
+
+  @media screen and (max-width: 992px) {
+    .title-section {
+      display: block;
+
+      .title {
+        font-size: 28px !important;
+        line-height: 34px !important;
+        margin-bottom: 20px !important;
+      }
+
+      .input-wrapper {
+
+        // input {
+          width: 240px !important;
+        // }
+      }
+    }
+
+    .job-item {
+      flex: 0 1 100% !important;
+      margin: auto;
+    }
+
+    .desktop {
+      display: none;
+    }
+
+    .mobile {
+      display: block;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .title-section {
+      display: block;
+
+      .title {
+        font-size: 24px !important;
+        line-height: 30px !important;
+        margin-bottom: 20px !important;
+      }
+
+      .input-wrapper {
+
+        // input {
+          width: 240px !important;
+        // }
+      }
+    }
+
+    .job-item {
+      flex: 0 1 100% !important;
+      margin: auto;
+      min-width: 290px !important;
+    }
+  }
+}

@@ -1,0 +1,68 @@
+.profile-right-sidebar-component {
+
+ 
+  .follow-containers{
+    margin-top: 8rem;
+    .follow-me{
+      margin: 25px 0px 0px 61px ;
+    }
+    .followUp-icon{
+      box-shadow: 0px 0px 10px 1px gainsboro;
+      margin: 2rem 0rem 0rem 5rem;
+      padding-top: 2rem;
+      width: 26rem;
+      height: 7rem;
+    }
+    a {
+      display: inline-block;
+      padding-top: 8px;
+      margin: 0 3px;
+      height: 30px;
+      width: 30px;
+      color: #fff;
+      border-radius: 50px;
+    }
+    .follow-fb{   
+    background: url('https://res.cloudinary.com/peersview-com/image/upload/v1586312285/facebook-fill_bwxdd5.svg') no-repeat;
+    background-size: contain;
+    background-color:#191d9057;
+    }
+    .follow-twitter{   
+      background: url('https://res.cloudinary.com/peersview-com/image/upload/v1586312287/twitter-fill_nsru14.svg') no-repeat;
+      background-size: contain;
+      background-color:#191d9057;
+      }
+    .follow-in{   
+      background: url('https://res.cloudinary.com/peersview-com/image/upload/v1586312285/linkedin-fill_vth3mh.svg') no-repeat;
+        background-size: contain;
+      background-color: #191d9057;
+      }
+  }
+  .follow-btn-and-options {
+    display: inline-flex;
+    .follow-btn {
+      width: 120px;
+      margin: 10px 0;
+    }
+    i {
+      margin-top: 13px;
+    }
+  }
+
+  .shared-social-component {
+    margin-top: 20px;
+    border: 1px solid #dbdbdb;
+  }
+  .shared-followers-component {
+    margin-top: 20px;
+  }
+  .followed-btn {
+    background-color: #631990;
+    color: #fff;
+  }
+
+  .follow-container {
+  
+    padding-left: 4rem;
+  }
+}

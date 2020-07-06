@@ -1,0 +1,116 @@
+<div class="add-experience-modal">
+  <h5 class="modal-heading" *ngIf="isEdit">Edit Education</h5>
+  <h5 class="modal-heading" *ngIf="!isEdit">Add Education</h5>
+  <div class="modal-body ng-scope">
+      <div class="form-group">
+        <label>School Name:</label>
+        <input type="text" [(ngModel)]="form.name" [ngModelOptions]="{standalone: true}" class="form-control" #name="ngModel" required>
+        <div *ngIf="name.invalid && (name.dirty || name.touched || submitted)" class="alert alert-danger">
+          <div *ngIf="name.errors.required">
+            This field is required.
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Education Level:</label>
+        <input type="text" [(ngModel)]="form.level" [ngModelOptions]="{standalone: true}" #level="ngModel" class="form-control" required>
+        <div *ngIf="level.invalid && (level.dirty || level.touched || submitted)" class="alert alert-danger">
+          <div *ngIf="level.errors.required">
+            This field is required.
+          </div>
+        </div>
+      </div>
+      <div class="form-group flex">
+        <div class="datepicker-wrapper">
+          <label>From:</label>
+          <mat-form-field>
+            <input
+              matInput
+              placeholder="From"
+              [matDatepicker]="picker1"
+              name="from"
+              [value]="form.from"
+              [(ngModel)]="form.from"
+              #from="ngModel"
+              [ngModelOptions]="{standalone: true}"
+              required
+              >
+            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+            <mat-datepicker #picker1></mat-datepicker>
+          </mat-form-field>
+          <div *ngIf="from.invalid && (from.dirty || from.touched || submitted)" class="alert alert-danger">
+            <div *ngIf="from.errors.required">
+              This field is required.
+            </div>
+          </div>
+        </div>
+        <div class="datepicker-wrapper">
+          <label>Till:</label>
+          <mat-form-field>
+            <input
+              matInput
+              placeholder="Till"
+              [matDatepicker]="picker2"
+              name="to"
+              [value]="form.to"
+              [(ngModel)]="form.to"
+              #to="ngModel"
+              [ngModelOptions]="{standalone: true}"
+              required
+              >
+            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+            <mat-datepicker #picker2></mat-datepicker>
+          </mat-form-field>
+          <div *ngIf="to.invalid && (to.dirty || to.touched || submitted)" class="alert alert-danger">
+            <div *ngIf="to.errors.required">
+              This field is required.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Major:</label>
+        <input type="text" [(ngModel)]="form.major" [ngModelOptions]="{standalone: true}" #major="ngModel" class="form-control" required>
+        <div *ngIf="major.invalid && (major.dirty || major.touched || submitted)" class="alert alert-danger">
+          <div *ngIf="major.errors.required">
+            This field is required.
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Minor:</label>
+        <input type="text" [(ngModel)]="form.minor" [ngModelOptions]="{standalone: true}" #minor="ngModel" class="form-control" required>
+        <!-- <div *ngIf="minor.invalid && (minor.dirty || minor.touched || submitted)" class="alert alert-danger">
+          <div *ngIf="minor.errors.required">
+            This field is required.
+          </div>
+        </div> -->
+      </div>
+      <div class="form-group flex">
+        <div class="datepicker-wrapper p-peersview-xr-1">
+          <label>Department GPA:</label>
+          <input type="text" [(ngModel)]="form.department_gpa" [ngModelOptions]="{standalone: true}" #department_gpa="ngModel" class="form-control" required>
+          <!-- <div *ngIf="department_gpa.invalid && (department_gpa.dirty || department_gpa.touched || submitted)" class="alert alert-danger">
+            <div *ngIf="department_gpa.errors.required">
+              This field is required.
+            </div>
+          </div> -->
+          <input type="checkbox" [(ngModel)]="form.is_hide_department_gpa" [ngModelOptions]="{standalone: true}"/> Hide from employers
+        </div>
+        <div class="datepicker-wrapper">
+          <label>Cumulative GPA:</label>
+          <input type="text" [(ngModel)]="form.cumulative_gpa" [ngModelOptions]="{standalone: true}" #cumulative_gpa="ngModel" class="form-control" required>
+          <!-- <div *ngIf="cumulative_gpa.invalid && (cumulative_gpa.dirty || cumulative_gpa.touched || submitted)" class="alert alert-danger">
+            <div *ngIf="cumulative_gpa.errors.required">
+              This field is required.
+            </div>
+          </div> -->
+          <input type="checkbox" [(ngModel)]="form.is_hide_cumulative_gpa" [ngModelOptions]="{standalone: true}"/> Hide from employers
+        </div>
+      </div>
+  </div>
+  <div class="modal-footer text-center">
+    <button type="button" class="btn-peersview-secondary btn-peersview-sm" (click)="onCancel()">Cancel</button>
+    <button type="button" class="btn-peersview-primary btn-peersview-sm" (click)="onSave()">Save</button>
+  </div>
+</div>

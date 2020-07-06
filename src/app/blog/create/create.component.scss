@@ -1,0 +1,41 @@
+.create-blog-component {
+  padding-top: 50px;
+
+  .title {
+    padding: 5px;
+    border-bottom: 1px solid;
+
+    h1 {
+      font-size: 26px;
+    }
+  }
+
+  .mat-form-field {
+    display: block;
+  }
+
+  .price-wrapper {
+    display: flex;
+
+    select {
+      width: 60px;
+    }
+  }
+
+  .angular-editor .angular-editor-wrapper .angular-editor-textarea {
+    height: 420px !important;
+  }
+
+  button[disabled], html input[disabled] {
+    cursor: not-allowed !important;
+    opacity: 0.5;
+  }
+  
+  @media (max-width: 991px) {
+    .title {
+      margin-top: 53px;
+      padding: 5px;
+      border-bottom: 1px solid;
+    }
+  }
+}

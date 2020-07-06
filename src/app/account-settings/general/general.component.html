@@ -1,0 +1,390 @@
+<div class="account-settings-general-component">
+  <div class="tab-title">GENERAL</div>
+  <ul class="account-list">
+<!--     <li>
+      <label class="setting-label">Change Image:</label>
+      <span class="setting-value"><input class="change-image" type="file"/></span>
+    </li> -->
+    <li>
+      <label class="setting-label">Name:</label>
+      <span class="setting-value" 
+        *ngIf="name.status === 'Edit'">{{name.firstName + ' ' + name.lastName}}</span>
+      <span class="edit-field" 
+        *ngIf="name.status === 'Save'">
+        <input type="text" [(ngModel)]="name.firstName" class="input-setting">
+        <input type="text" [(ngModel)]="name.lastName" class="input-setting">
+      </span>
+      <a class="setting-edit mouse-pointer" 
+        *ngIf="name.status === 'Edit'" 
+        (click)="onEditOrSave(name)">Edit</a>
+    </li>
+    <li>
+      <label class="setting-label">Primary Email:</label>
+      <span class="setting-value"
+      *ngIf="email.status === 'Edit'">{{email.value}}</span>
+      <span class="edit-field" *ngIf="email.status === 'Save'">
+        <input type="text" [(ngModel)]="email.value" class="input-setting">
+        <button (click)="sendEmailVerifyCode(email.value)" [disabled]="userInfo.email == email.value">send code</button>
+      </span>
+      
+      <a class="setting-edit mouse-pointer"
+        *ngIf="email.status === 'Edit'" 
+        (click)="onEditOrSave(email)">
+        Edit
+      </a>
+      <div *ngIf="isSentVerifyCode" class="verify-code-wrapper">
+        <input type="text" [(ngModel)]="verifyCode" class="input-setting"/>
+        <button (click)="verifyEmailAddress(verifyCode)">Verify</button>
+      </div>
+    </li>
+    <li>
+      <label class="setting-label">Language:</label>
+      <span class="setting-value" *ngIf="languages.status === 'Edit'">English</span>
+      <span class="edit-field">
+        <select class="input-setting" *ngIf="languages.status === 'Save'" [(ngModel)]="languages.value" (change)="onChangeLanguage($event.target.value)">
+          <option selected>Select Language</option>
+          <option *ngFor="let language of languagesData" [value]="language.value">{{language.value}}</option>
+        </select>
+      </span>
+      <a class="setting-edit mouse-pointer"
+        *ngIf="languages.status === 'Edit'" 
+        (click)="onEditOrSave(languages)">Edit</a>
+    </li>
+    <li>
+      <label class="setting-label">Country:</label>
+      <span class="setting-value" *ngIf="country.status === 'Edit'" >{{country.value}}</span>
+      <span class="edit-field">
+        <select class="input-setting" *ngIf="country.status === 'Save'" [(ngModel)]="country.value" (change)="onChangeCountry($event.target.value);">
+          <option selected="selected" disabled>Select Country</option>
+          <option *ngFor="let country1 of countries" value={{country1.name}}>{{country1.name}}</option>
+        </select>
+      </span>
+      <a class="setting-edit mouse-pointer"
+        *ngIf="country.status === 'Edit'" 
+        (click)="onEditOrSave(country)">Edit
+      </a>
+    </li>
+    <li>
+      <label class="setting-label">City:</label>
+      <span class="setting-value" *ngIf="city.status === 'Edit'" >{{city.value}}</span>
+      <span class="edit-field">
+        <input
+          type="text"
+          *ngIf="city.status === 'Save'"
+          class="input-setting"
+          placeholder="Current City"
+          autocomplete="city"
+          name="city"
+          required
+          [(ngModel)]="city.value">
+      </span>
+      <a class="setting-edit mouse-pointer"
+        *ngIf="city.status === 'Edit'" 
+        (click)="onEditOrSave(city)">Edit
+      </a>
+    </li>
+    <li class="date-of-birth-container">
+      <label class="setting-label">Date of Birth:</label>
+      <span class="setting-value" *ngIf="dateOfBirth.status === 'Edit'" >{{birthString}}</span>
+      <span class="edit-field">
+        <!-- <input type="text" value="john@gmail.com" class="input-setting" *ngIf="dateOfBirth.status === 'Save'"> -->
+        <mat-form-field *ngIf="dateOfBirth.status === 'Save'">
+            <input
+              matInput
+              placeholder="Date of birth"
+              [matDatepicker]="picker"
+              name="birthDate"
+              [value]="dateOfBirth.value"
+              [(ngModel)]="dateOfBirth.value"
+              required
+              >
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+      </span>
+      <a class="setting-edit mouse-pointer"
+        *ngIf="dateOfBirth.status === 'Edit'" 
+        (click)="onEditOrSave(dateOfBirth)">Edit</a>
+    </li>
+    <!-- Organization Type -->
+    <li *ngIf="userInfo?.userTypeId == 3">
+      <label class="setting-label">Institution:</label>
+      <span class="setting-value" *ngIf="institution.status === 'Edit'" >{{institution.value}}</span>
+      <span class="edit-field">
+          <input
+            type="text"
+            class="input-setting"
+            *ngIf="institution.status === 'Save'"
+            placeholder="Industry"
+            autocomplete="institution"
+            name="institution"
+            required
+            [(ngModel)]="institution.value">
+      </span>
+      <a class="setting-edit mouse-pointer"
+        *ngIf="institution.status === 'Edit'" 
+        (click)="onEditOrSave(institution)">Edit
+      </a>
+    </li>
+    
+    <li *ngIf="userInfo?.userTypeId == 3">
+      <label class="setting-label">Website:</label>
+      <span class="setting-value" *ngIf="website.status === 'Edit'" >{{website.value}}</span>
+      <span class="edit-field">
+        <input
+          type="text"
+          class="input-setting"
+          *ngIf="website.status == 'Save'"
+          placeholder="Website"
+          autocomplete="website"
+          name="website"
+          required
+          [(ngModel)]="website.value">
+      </span>
+      <a class="setting-edit mouse-pointer"
+        *ngIf="website.status === 'Edit'" 
+        (click)="onEditOrSave(website)">Edit
+      </a>
+    </li>
+    <!-- Organization Type -->
+    <!-- Professional type -->
+    <li *ngIf="userInfo?.userTypeId == 2">
+      <label class="setting-label">Company:</label>
+      <span class="setting-value" *ngIf="company.status === 'Edit'" >{{company.value}}</span>
+      <span class="edit-field">
+        <input
+          type="text"
+          class="input-setting"
+          *ngIf="company.status == 'Save'"
+          name="company"
+          [(ngModel)]="company.value"/>
+      </span>
+      <a class="setting-edit mouse-pointer"
+        *ngIf="company.status === 'Edit'" 
+        (click)="onEditOrSave(company)">Edit
+      </a>
+    </li>
+      <!-- Professional type -->
+      <!-- Student Type -->
+    <li *ngIf="userInfo?.userTypeId == 1">
+      <label class="setting-label">School:</label>
+      <span class="setting-value" *ngIf="school.status === 'Edit'" >{{school.value}}</span>
+      <span class="edit-field">
+        <input
+          type="text"
+          class="input-setting"
+          *ngIf="school.status === 'Save'"
+          placeholder="Name of your School"
+          autocomplete="school"
+          name="school"
+          required
+          [(ngModel)]="school.value">
+      </span>
+      <a class="setting-edit mouse-pointer"
+        *ngIf="school.status === 'Edit'" 
+        (click)="onEditOrSave(school)">Edit
+      </a>
+    </li>
+    <li *ngIf="userInfo?.userTypeId == 1">
+      <label class="setting-label">Course:</label>
+      <span class="setting-value" *ngIf="course.status === 'Edit'" >{{course.value}}</span>
+      <span class="edit-field">
+        <select class="input-setting" *ngIf="course.status == 'Save'" name="courseId" required [(ngModel)]="course.id" (change)="onChangeCourse($event.target.value)">
+          <option value="0">Select a Course Community</option>
+          <option *ngFor="let course of courses" [value]="course.id">
+            {{course.name | removeAmp}}
+          </option>
+        </select>
+      </span>
+      <a class="setting-edit mouse-pointer"
+        *ngIf="course.status === 'Edit'" 
+        (click)="onEditOrSave(course)">Edit
+      </a>
+    </li>
+
+    <li class="date-of-birth-container" *ngIf="userInfo?.userTypeId == 1">
+      <label class="setting-label">Graduate At:</label>
+      <span class="setting-value" *ngIf="graduate_at.status === 'Edit'" >{{graduateString}}</span>
+      <span class="edit-field">
+        <mat-form-field  tabindex="-1"   *ngIf="graduate_at.status === 'Save'">
+            <input
+              matInput
+              mode="MONTH" 
+              placeholder="'When do you expect to graduate?'"
+              [matDatepicker]="pickers"
+              name="graduate_at"
+              [value]="graduate_at.value" 
+              [(ngModel)]="graduate_at.value" 
+              [ngModelOptions]="{standalone: true}" 
+              [min]="'01/2000'" 
+              [max]="'12/2100'"
+              required
+              >
+            <mat-datepicker-toggle matSuffix [for]="pickers"></mat-datepicker-toggle>
+            <mat-datepicker #pickers></mat-datepicker>
+          </mat-form-field>
+      </span>
+      <a class="setting-edit mouse-pointer"
+        *ngIf="graduate_at.status === 'Edit'" 
+        (click)="onEditOrSave(graduate_at)">Edit
+      </a>
+    </li>
+
+    <!-- <li class="date-of-birth-container" *ngIf="userInfo?.userTypeId == 1">
+      <label class="setting-label">Graduate At:</label>
+      <span class="setting-value" *ngIf="graduate_at.status === 'Edit'" >{{graduateString}}</span>
+      <span class="edit-field">
+        <jp-multi-datepicker 
+          tabindex="-1"  
+          mode="MONTH" 
+          *ngIf="graduate_at.status === 'Save'"
+          [(ngModel)]="graduate_at.value" 
+          [ngModelOptions]="{standalone: true}" 
+          [min]="'01/2000'" 
+          [max]="'12/2100'"
+          [label]="'When do you expect to graduate?'"
+        ></jp-multi-datepicker>
+      </span>
+      <a class="setting-edit mouse-pointer"
+        *ngIf="graduate_at.status === 'Edit'" 
+        (click)="onEditOrSave(graduate_at)">Edit
+      </a>
+    </li> -->
+    <!-- Student Type -->
+  </ul>
+  <li class="setting-action m-peersview-yt-2 text-center" id="general-action" style="display: list-item;">
+    <label class="setting-lbl">&nbsp;</label>
+    <span class="setting-value">
+      <button (click)="saveGeneralInfo()" class="btn btn-sm btn-peersview-primary" [disabled]="!checkUpdatable()">Save Changes</button>
+      &nbsp;&nbsp;
+      <input type="button" (click)="cancelEdit()" value="Cancel" class="btn btn-white btn-sm">
+      </span>
+  </li>
+  <!-- <div class="row p-peersview-y-1">
+    <div class="col-xs-12 col-md-2">
+      <label>Change Image:</label>
+    </div>
+    <div class="col-xs-12 col-md-10">
+      <input class="change-image" type="file"/>
+    </div>
+  </div> -->
+
+  <!-- <div class="row p-peersview-y-1">
+    <div class="col-xs-12 col-md-2">
+      <label>Name:</label>
+    </div>
+    <div class="col-xs-12 col-md-8"> -->
+      <!-- <span *ngIf="name.status === 'Edit'">{{user.firstName}} {{user.lastName}}</span> -->
+      <!-- <span *ngIf="name.status === 'Save'">
+        <div class="col-sm-6">
+          <input
+            type="text"
+            placeholder="First Name"
+            class="form-control"
+            [(ngModel)]="name.firstName"
+            />
+        </div>
+        <div class="col-sm-6">
+          <input
+            type="text"
+            placeholder="Last Name"
+            class="form-control"
+            [(ngModel)]="name.lastName"/>
+        </div>
+      </span>
+    </div>
+    <div class="col-xs-12 col-md-2 edit-or-save">
+      <a
+        class="btn-peersview-primary btn-peersview-sm"
+        (click)="onEditOrSave(name)"
+        *ngIf="name.status === 'Save'">Cancel</a>
+      <a
+        class="btn-peersview-primary btn-peersview-sm"
+        (click)="onEditOrSave(name);name.firstName=user.firstName;name.lastName=user.lastName">{{name.status === 'Save' ? 'Save': 'Edit'}}</a>
+    </div>
+  </div> -->
+
+  <!-- <div class="row p-peersview-y-1">
+    <div class="col-xs-12 col-md-2">
+      <label>Primary Email:</label>
+    </div>
+    <div class="col-xs-12 col-md-8">
+      <span *ngIf="email.status === 'Edit'">{{user?.email}}</span>
+      <span *ngIf="email.status === 'Save'">
+        <input
+          type="text"
+          placeholder="Email"
+          class="form-control"
+          [(ngModel)]="email.value"/>
+      </span>
+    </div>
+    <div class="col-xs-12 col-md-2 edit-or-save">
+      <a
+        class="btn-peersview-primary btn-peersview-sm"
+        (click)="onEditOrSave(email)"
+        *ngIf="email.status === 'Save'">Cancel</a>
+      <a
+        class="btn-peersview-primary btn-peersview-sm"
+        (click)="onEditOrSave(email);email.value=user.email">{{email.status === 'Save' ? 'Save': 'Edit'}}</a>
+    </div>
+  </div> -->
+
+  <!-- <div class="row p-peersview-y-1">
+    <div class="col-xs-12 col-md-2">
+      <label>Language:</label>
+    </div>
+    <div class="col-xs-12 col-md-8">
+      <span *ngIf="languages.status === 'Edit'">{{user?.language}}</span>
+      <span *ngIf="languages.status === 'Save'">
+        <select class="form-control" (change)="onChangeLanguage($event.target.value)">
+          <option selected>Select Language</option>
+          <option *ngFor="let language of languagesData" [value]="language.value">{{language.value}}</option>
+        </select>
+      </span>
+    </div>
+    <div class="col-xs-12 col-md-2 edit-or-save">
+      <a
+        class="btn-peersview-primary btn-peersview-sm"
+        (click)="onEditOrSave(languages)"
+        *ngIf="languages.status === 'Save'">Cancel</a>
+      <a
+        class="btn-peersview-primary btn-peersview-sm"
+        (click)="onEditOrSave(languages);languages.value=user.language">{{languages.status === 'Save' ? 'Save': 'Edit'}}</a>
+    </div>
+  </div>
+
+  <div class="row p-peersview-y-1">
+    <div class="col-xs-12 col-md-2">
+      <label>Date of Birth:</label>
+    </div>
+    <div class="col-xs-12 col-md-8">
+      <span *ngIf="dateOfBirth.status === 'Edit'">{{user?.birthDate | localDate}}</span>
+      <span *ngIf="dateOfBirth.status === 'Save'">
+        <mat-form-field>
+          <input matInput mdInput [(ngModel)]="user.birthDate" [matDatepicker]="picker" placeholder="Choose a date">
+          <mat-datepicker-toggle mdSuffix [for]="picker"></mat-datepicker-toggle>
+        </mat-form-field>
+        <mat-datepicker #picker></mat-datepicker>
+      </span>
+    </div>
+    <div class="col-xs-12 col-md-2 edit-or-save">
+      <a
+        class="btn-peersview-primary btn-peersview-sm"
+        (click)="onEditOrSave(dateOfBirth)"
+        *ngIf="dateOfBirth.status === 'Save'">Cancel</a>
+      <a
+        class="btn-peersview-primary btn-peersview-sm"
+        (click)="onEditOrSave(dateOfBirth)">{{dateOfBirth.status === 'Save' ? 'Save': 'Edit'}}</a>
+    </div>
+  </div> -->
+
+  <!-- <label class="setting-lbl">Date of Birth</label>
+  <span class="setting-value">{{ user.birthDate | date}}</span>
+  <div class="edit-field" style="display:none;">
+    <mat-form-field>
+      <input matInput mdInput [(ngModel)]="user.dateOfBirth" [matDatepicker]="picker" placeholder="Choose a date">
+      <mat-datepicker-toggle mdSuffix [for]="picker"></mat-datepicker-toggle>
+    </mat-form-field>
+    <mat-datepicker #picker></mat-datepicker>
+  </div> -->
+</div>

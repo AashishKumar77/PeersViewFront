@@ -1,0 +1,76 @@
+<div class="job-detail-component">
+  <div class="container">
+    <a [routerLink]="['/job/search']" class="back-btn">
+      <i class="material-icons">keyboard_arrow_left</i>
+      Back to Jobs List
+    </a>
+    <div class="job-content" *ngIf="job">
+      <div class="job-description">
+        <div class="info">
+          <div class= "info-1">
+            <div class="city-company">
+              <div class="logo">
+                <cl-image class="company-image"
+                  public-id="{{job.company_logo ? job.company_logo : 'avatar'}}">
+                  <cl-transformation width="50" height="50" gravity="custom">
+                  </cl-transformation>
+                </cl-image>
+                <!-- <img src="/src/assets/images/company_logo.svg" alt="LOGO"/> -->
+              </div>
+              <div>
+                <div class="campany-name">{{job.company}}</div>
+                <span class="under-txt"><strong>Apply By: </strong>{{job.deadline | localDate}}</span>
+              </div>    
+            </div>
+            <div>
+              <h3 class="job-title">{{job.title}}</h3>
+            </div>
+            <div class="campany-address">
+              <div class="job-type">
+                <img class="icon job-type-icon m-peersview-xr-1" src="https://res.cloudinary.com/peersview-com/image/upload/v1585225285/job_status_component_jub2oq.png" alt="icon" />
+                <span class="under-txt" style="float: none;">Full Time</span>
+              </div>
+              <div class="job-city">
+                <img class="icon m-peersview-xr-1" src="https://res.cloudinary.com/peersview-com/image/upload/v1585225325/map-pin-5-line_chaco6.svg" alt="icon" />
+                <!-- <span class="name" [innerHtml]="trimStory(job.country, 13)"></span> -->
+                <span class="under-txt" style="float: none;">{{job.city + ', ' + job.country}}</span>
+              </div>
+            </div>
+          </div>
+          <div class="price-deadline">
+            <div class="job-currency"> <span><h3>{{job.currency + job.price}} </h3></span></div>
+           
+            <div class ="appt-btn">
+              <a class="apply-btns btn-peersview-lg" href="{{job.source_link}}" target="_blank">Apply</a>
+            </div>
+          </div> 
+        </div>
+        <hr/>
+        <div class="content">
+          <p>About us</p>
+          <span>
+            {{job.company_bio}}
+          </span>
+          <p>Experience</p>
+          <span>
+            {{job.experience}}
+          </span>
+          <p>Job Description</p>
+          <span>
+            {{job.jobfunction}}
+          </span>
+          <p>Contact</p>
+          <span>{{job.contact}}</span>
+        </div>
+      </div>
+      <div class="popularJobs">
+        <h2>Related  Jobs</h2>
+        <shared-job-card-component [job]="job"></shared-job-card-component>
+      </div>
+      <hr/>
+      <!-- <div>
+        <a class="apply-btn btn-peersview-md" href="{{job.source_link}}" target="_blank">Apply</a>
+      </div> -->
+    </div>
+  </div>
+</div>

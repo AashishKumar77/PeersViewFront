@@ -1,0 +1,140 @@
+.index-community-page-component {
+
+  padding: 0 0 40px 0;
+  // background: url('https://res.cloudinary.com/peersview-com/image/upload/v1519072493/communityBg.jpg') no-repeat;
+  background-size: cover;
+  // color: #ffffff;
+  // color: #631990;
+  // border-bottom: 1px solid #65298a;
+  .padding {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  .font-size {
+    font-size: 20px;
+  }
+  .width {
+    width: 75%;
+  }
+  .margin-bottom {
+    margin-bottom: 15px;
+  }
+  .commnity-body {
+    padding-top: 10px;
+
+    .valign-center {
+      align-items: center;
+    }
+  }
+  .community-show-sticky {
+    display: block;
+  }
+  .title-header {
+    // font-weight: normal;
+    // color: black;
+    font-size: 18px;
+  }
+
+  .title {
+    margin-top: 10px;
+    margin-bottom: 30px;
+    color: #631990;
+  }
+  .img-landing {
+    padding-right: 20px;
+  }
+  small {
+    display: block;
+    margin-top: 10px;
+    font-size: 18px;
+    color: #fff;
+  }
+  
+  .items-wrapper {
+    // margin-top: 55px;
+    text-align: center;
+    color: black;
+
+    .item {
+      padding: 5px;
+
+      .item-content {
+        border-radius: 5px;
+        height: 100%;
+        background-color: #fbfbfb;
+        padding: 20px;
+        box-shadow: 0px 0px 5px 0px #c7c7c7;
+
+        span {
+          padding: 10px;
+          display: inline-block;
+          background-color: #dc97e4;
+          border-radius: 5px;
+          margin-bottom: 20px;
+          margin-top: 10px;
+        }
+
+        .sub-title {
+          font-size: 16px;
+          font-weight: bold;
+          font-family: "Maven Pro", sans-serif;
+        }
+
+        .item-description {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
+.img-landing img{
+  //  height: 316px;
+   width: 100%;
+}
+
+@media only screen and (max-width : 1024px) { 
+  .index-community-page-component  {
+    .width {
+      width: 65%;
+      font-size: 20px;
+   }
+ }
+} 
+@media only screen and (max-width : 900px) { 
+ .img-collaborate {
+    display: inline-block !important;
+    float: none;
+    text-align: center;
+ }
+}
+@media only screen and (max-width : 600px) {
+   .img-collaborate img {
+    width: 100%;
+    height: 100%;
+   }
+ }
+
+@media only screen and (max-width : 319px) {
+  .index-community-page-component {
+ 
+    .mobile-center {
+      padding: 0;
+    }
+    cl-image img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+@media only screen and (max-width : 479px) {
+  .index-community-page-component {
+    .mobile-center {
+      padding: 0;
+    }
+    cl-image img {
+      width: 100%;
+      height: 100%;
+    }
+  }  
+}

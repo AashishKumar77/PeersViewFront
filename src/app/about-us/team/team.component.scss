@@ -1,0 +1,145 @@
+.about-us-team-component {
+  // background: url('https://res.cloudinary.com/peersview-com/image/upload/v1519654010/teamBg.png') no-repeat;
+  // background-size: cover;
+  // padding: 100px 0;
+  .container {
+     padding-bottom: 100px;
+  }
+
+  .container img {
+    width: 300px;
+    height: 300px;
+    border-radius: 2rem;
+  }
+  .members {
+    padding-bottom: 40px;
+    .members-info {
+      margin: 0 20px;
+    }
+    .members-info:nth-child(4) {
+      margin-left: 40px;
+    }
+  }
+  .members-info {
+    img {
+      margin-bottom: 10px;
+      border-radius: 50%
+    }
+  }
+  .header {
+    margin-bottom: 75px;
+    color: #ffffff;
+    h1 {
+      // font-size: 8rem;
+      font-size: 6rem;
+    }
+    p {
+      font-size: 18px;
+    }
+  }
+  .members-info {
+    display: inline-grid;
+    .name, .position {
+      color: #ffffff;
+    }
+    .name {
+      font-size: 1.6rem;
+    }
+    .position {
+      font-size: 2rem;
+      font-style: oblique;
+    }
+  }
+  .advisory-team {
+    position: relative;
+    h1 {
+      font-size: 6rem;
+      color: #000000;
+    }
+    .members-info {
+      .name {
+        color: #000000;
+      }
+    }
+  }
+
+  .img-small {
+    margin: 0rem 1rem 0rem 0rem;
+  }
+  .social-list1 {
+    margin-top: 10px;
+
+    a {
+      width: 25px;
+      height: 25px;
+      display: inline-block;
+      vertical-align: middle;
+      margin-left: 10px;
+      background: url('https://res.cloudinary.com/peersview-com/image/upload/v1562657208/social-media_pu2loi.png') no-repeat 0 0;
+    }
+    a:first-child {
+      margin-left: 0px;
+    } 
+    a.facebook-wrap {
+      background-position: 0 0;
+    }
+
+    a.twitter {
+      background-position: -41px 0;
+    }
+
+    a.linkedIn-wrap {
+      background-position: -121px 0;
+    }
+    
+    // a.instagram-wrap {
+    //   background-position: -121px 0
+    // }
+
+  }
+
+  // Custom, iPhone Retina
+  @media only screen and (min-width : 320px) {
+    .container {
+      padding: 1rem 0rem;
+   }
+   .img-small {
+     margin: 0rem 0rem 0rem 1rem;
+   }
+  }
+  // extra Small Devices, Phones
+  @media only screen and (min-width : 480px) {
+    .team-label{
+      font-size: 2rem;
+    }
+  }
+  // Small Devices, Tablets
+  @media only screen and (min-width : 768px) {
+    .header {
+      h1 {
+        font-size: 8rem;
+      }
+    }
+    .container {
+      padding-top: 100px;
+    }
+    .advisory-team {
+      top: 6rem;
+    }
+    .team-label{
+      font-size: 2rem;
+    }
+  }
+  // Medium Devices, Desktops
+  @media only screen and (min-width : 992px) {
+    .team-label{
+      font-size: 4rem;
+    }
+  }
+  // Large Devices, Wide Screens
+  @media only screen and (min-width : 1200px) {
+    .team-label{
+      font-size: 4rem;
+    }
+  }
+}

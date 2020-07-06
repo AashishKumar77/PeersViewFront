@@ -1,0 +1,92 @@
+.shared-scholarship-component {
+  
+  .scholarship-item {
+    padding: 10px;
+    border-bottom: 1px solid #e0e0e0;
+    
+    h2 {
+      margin-top: 0px;
+    }
+
+    .status-section {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .scholarship-title-wrapper {
+      display: flex;
+      position: relative;
+
+      a {
+        position: absolute;
+        right: 0px;
+      }
+    }
+
+    .scholarship-title {
+      flex: 1;
+      color: #631a90;
+      cursor: pointer;
+    }
+
+    .status-wrapper {
+      display: flex;
+    }
+
+    .status-item {
+      display: flex;
+      align-items: center;
+      margin-right: 20px;
+      color: grey;
+
+      .material-icons {
+        margin-right: 3px;
+      }
+    }
+
+    .price-deadline {
+      display: flex;
+
+      .deadline {
+        flex: 1;
+      }
+    }
+
+    .scholarship-description {
+      white-space: pre-line;
+      font-size: 1.4rem;
+    }
+
+    .actions-wrapper {
+      margin: 10px 0;
+
+      .view-scholarship-btn {
+        padding: 10px 20px;
+        background-color: #631a90;
+        color: white;
+        display: inline-block;
+      }
+    }
+  }
+  
+  // Custom, iPhone Retina
+  @media only screen and (min-width : 320px) {}
+  // extra Small Devices, Phones
+  @media only screen and (min-width : 480px) {}
+  // Small Devices, Tablets
+  @media only screen and (min-width : 768px) {}
+  // Medium Devices, Desktops
+  @media only screen and (min-width : 992px) {}
+  // Large Devices, Wide Screens
+  @media only screen and (min-width : 1200px) {}
+
+  @media (max-width: 480px) {
+    // .scholarship-description {
+      // text-align: justify;
+    // }
+
+    .view-scholarship-btn {
+      padding: 10px 10px;
+    }
+  }
+}

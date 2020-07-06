@@ -1,0 +1,20 @@
+<div class="blog-detail-component">
+  <div class="container">
+    <a [routerLink]="['/blog']" class="back-btn">
+      <i class="material-icons">keyboard_arrow_left</i>
+      Back to Blog Home
+    </a>
+    <div class="blog-content" *ngIf="blog">
+      <div>
+        <h3 class="blog-title">{{blog.title}}</h3>
+        <p>By {{blog.user ? (blog.user.firstName + ' ' + blog.user.lastName) : 'Unknown'}}</p>
+        <p>{{blog.createdAt | date: 'fullDate'}}</p>
+        <hr/>
+        <div class="content">
+          <div [innerHtml]="blog.content">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

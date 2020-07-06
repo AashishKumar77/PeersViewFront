@@ -1,0 +1,20 @@
+.add-education-modal {
+    .flex {
+        display: flex;
+
+        .datepicker-wrapper {
+            flex: 0 1 50%;
+
+            label {
+                margin-right: 10px;
+            }
+        }
+    }
+
+    .alert-danger {
+        background-color: transparent;
+        border-color: transparent;
+        color: red;
+        padding: 0px;
+    }
+}

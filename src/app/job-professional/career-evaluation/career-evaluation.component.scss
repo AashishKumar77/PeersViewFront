@@ -1,0 +1,164 @@
+@import '../../../assets/scss/variables.scss';
+
+.job-career-evaluation-component {
+  padding-top: 80px;
+  padding-bottom: 30px;
+
+  .top-bg {
+    position: relative;
+    img {
+      width: 100%;
+      min-height: 250px;
+    }
+
+    h1 {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+    }
+
+    .back {
+      display: flex;
+      align-items: center;
+      font-size: 16px;
+      color: white;
+      font-weight: bold;
+      position: absolute;
+      top: 40px;
+      left: 55px;
+
+      i {
+        font-size: 20px;
+        margin-right: 5px;
+      }
+    }
+  }
+
+  .container {
+    .evaluation-info {
+      display: flex;
+      .left {
+        flex: 0 1 60%;
+        padding-right: 20px;
+      }
+
+      .right {
+        flex: 0 1 40%;
+      }
+
+      p {
+        font-weight: bold;
+      }
+
+      span {
+        font-size: 16px;
+      }
+      .mb-30 {
+        margin-bottom: 30px;
+      }
+
+      ul {
+        padding-left: 20px;
+        li {
+          list-style: disc;
+          margin-bottom: 10px;
+          font-size: 16px;
+        }
+      }
+    }
+    .checklist-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+
+      .checkitem {
+        flex: 0 1 33.33%;
+        font-size: 18px;
+        padding: 4px;
+      }
+    }
+
+    h1 {
+      color: $primary-color;
+      margin-bottom: 20px;
+    }
+
+    .calc-btn {
+      border-radius: 5px;
+      display: block;
+      margin: auto;
+      margin-top: 20px;
+      margin-bottom: 55px;
+    }
+
+    .calc-result {
+      margin-bottom: 30px;
+
+      .result-item {
+        margin-bottom: 10px;
+        display: flex;
+      }
+      .key {
+        padding: 10px 15px;
+        display: inline-block;
+        border-radius: 5px;
+        background-color: $primary-color;
+        color: white;
+        min-width: 39px;
+        text-align: center;
+        margin-right: 15px;
+        height: 40px;
+      }
+
+      .item {
+        padding: 5px 15px;
+        border-radius: 20px;
+        background: #9C27B0;
+        color: white;
+        margin-right: 10px;
+        white-space: nowrap;
+        display: inline-block;
+        margin-top: 5px;
+      }
+    }
+
+    .result-section {
+      max-width: 800px;
+      margin: auto;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px 1px #d2d2d2;
+
+      h2 {
+        margin-top: 0px;
+        font-size: 24px;
+      }
+
+      h3 {
+        font-size: 20px;
+
+        span {
+          color: #9C27B0;
+        }
+      }
+
+      p {
+        font-size: 16px;
+      }
+    }
+  }
+  @media (max-width: 991px) {
+    .container {
+        margin-top: 54px;
+    }
+  }
+
+  @media only screen and (max-width : 768px) {
+    .checklist-wrapper {
+      flex-direction: column;
+    }
+
+  }
+}
+

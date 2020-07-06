@@ -1,0 +1,79 @@
+@import '../../../assets/scss/variables';
+
+.about-us-index-page-component {
+  .container {
+    height: 100%;
+    .contents {
+      padding: 5rem 0rem;
+    }
+  }
+
+  .arrow-left {
+    background: url('https://res.cloudinary.com/peersview-com/image/upload/v1586312285/arrow-left-line_fbvyzd.svg') no-repeat;
+    background-size: contain;
+    height: 18px;
+  }
+
+  .dot {
+    height: 40px;
+    width: 40px;
+    background-color: #340E49;
+    border-radius: 50%;
+    display: inline-block;
+    .play-mini{
+      background: url('https://res.cloudinary.com/peersview-com/image/upload/v1586312285/play-mini-line_kuluro.svg') no-repeat;
+      background-size: contain;
+      height: 18px;
+      margin-top: 1.5rem;
+    }
+  }
+
+  .peersview-label {
+    letter-spacing: 1.44px;
+    font-size: 8rem;
+    font-weight: 600;
+    line-height: 9rem;
+    border-bottom: 1px solid #340E49;
+    padding-bottom: 4rem;
+    width: min-content;
+    padding-top: 1rem;
+  }
+
+  .video-label-details {
+    padding-top: 3rem;
+    .video-label {
+      font-size: 2rem;
+      font-family: Montserrat;
+    }
+  }
+
+  .video-player {
+    width: 100%;
+    border-radius: 1rem;
+  }
+
+
+  // Custom, iPhone Retina
+  @media only screen and (min-width : 320px) {
+    .peersview-label {
+      font-size: 5rem;
+      margin-left: 1rem;
+      line-height: 5rem;
+    }
+    .video-label-details {
+      margin-left: 2rem;
+    }
+  }
+  // extra Small Devices, Phones
+  @media only screen and (min-width : 480px) {}
+  // Small Devices, Tablets
+  @media only screen and (min-width : 768px) {
+    h1 {
+      font-size: 8rem;
+    }
+  }
+  // Medium Devices, Desktops
+  @media only screen and (min-width : 992px) {}
+  // Large Devices, Wide Screens
+  @media only screen and (min-width : 1200px) {}
+}

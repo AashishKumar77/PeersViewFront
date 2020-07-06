@@ -1,0 +1,28 @@
+<div class="shared-blog-component">
+  <h2 class="no-post-yet text-center" *ngIf="items.length === 0">
+    {{notBlogMessage}}
+  </h2>
+
+  <div class="blog-item" *ngFor="let item of items">
+    <div class="blog-title-wrapper">
+      <h3 class="blog-title" (click)="showBlogDetail(item)">{{item.title}}</h3>
+      <!-- <a data-toggle="tooltip" title="Report this blog">
+        <i class="material-icons">flag</i>
+      </a> -->
+      <p>By {{item.user ? (item.user.firstName + ' ' + item.user.lastName) : 'Unknown'}} on {{item.createdAt | date: 'fullDate'}}</p>
+    </div>
+    <!-- <div class="blog-item-content">
+      <p class="html-content-wrapper" [innerHtml]="trimStory(item.content, 500)" class="blog-description">
+      </p>
+    </div> -->
+    <!-- <div class="actions-wrapper">
+      <a class="view-blog-btn" (click)="showBlogDetail(item)">View Blog</a>
+    </div> -->
+  </div>
+  <div class="load-more"><!-- *ngIf="items.length >= limit"-->
+    <button type="button" class="btn-peersview-secondary btn-block btn-peersview-md" (click)="onLoadMoreBlog()"
+      [disabled]="isLoadingMoreBlogs">
+      {{btnLoadMoreText}}
+    </button>
+  </div>
+</div>

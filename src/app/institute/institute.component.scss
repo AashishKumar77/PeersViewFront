@@ -1,0 +1,40 @@
+.institute-component {padding:14% 0px 2%;
+  background-image: url(../../assets/images/institute-bg.png);background-repeat: repeat-y;min-height: 100vh;;
+background-position: center;background-size:contain;;}
+.get-job-done-blue h2{color: #fff;;font-weight: bold;}
+.get-job-done-blue h5{font-size: 23px; color: #fff;    margin-top: 40px;}
+.get-job-done-blue p{color: #fff;;}
+.student-form-part strong {
+  display: block;
+  font-size: 29px;
+  margin-bottom: 30px;
+  margin-top: 21px;
+}   
+.or-prt {
+  text-align: center;
+  font-weight: bold;
+  font-size: 23px;
+}
+.student-form-part label {
+  font-size: 16px;
+}
+.submit-btn{padding: 8px 40px;
+  border-radius: 5px;color:#fff;float:right;
+  background-color: #340e49;}
+  .submit-btn:hover{color: #fff;;}
+@media screen and (max-width:1100px){
+  .institute-component{background-position: -60px 20px;}
+}
+@media screen and (max-width:900px){
+  .institute-component{background-position: -160px 20px;}
+}
+@media screen and (max-width:767px){
+  .institute-component{padding-top: 80px;background: #fff;;}
+  .get-job-done-blue{background: #1569E0;padding:40px 15px;}
+  .institute-component .col-sm-5 {
+    padding: 0px;
+}
+.student-form-part {padding:30px 15px;}
+.get-job-done-blue h5{margin-top: 20px;;}
+.student-form-part strong{margin-bottom:10px;margin-top: 0px;;}
+}

@@ -1,0 +1,45 @@
+<div class="user-management-component">
+  <div class="tab-title">user-management</div>
+
+  <div class="row p-peersview-y-1 billing-row  m-peersview-0">
+    <div class="p-peersview-0 col-sm-3">
+      <label>User:</label>
+    </div>
+    <div class="col-sm-5">
+      <span class="edit-field">
+        <select class="input-setting"  [(ngModel)]="user" >
+          <option disabled [ngValue]="null">Select User</option>
+           <option *ngFor="let user of users" [ngValue]="user">{{user.firstName}} - {{user.lastName}} </option>
+        </select>
+      </span>
+
+    </div>
+    <div class="col-sm-4 account-settings-billing-add-billing-button text-right">
+      <button
+      class="btn-peersview-primary btn-peersview-sm"
+      (click)="add()">Add User</button>
+    </div>
+  </div>
+    <label class="setting-label">List Of Users:</label>
+
+    <div >
+      <table class="table table-striped">
+        <thead>
+            <tr>
+              <th>User Name</th>
+              <th>Email</th>
+              <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of selectedUsers">
+            <td>{{ user.companyuser.name }}</td>
+            <td>{{ user.companyuser.email }}</td>
+            <button id="remove" (click)="deleteUser(user)">Delete</button>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+
+</div>

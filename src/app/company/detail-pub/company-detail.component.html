@@ -1,0 +1,195 @@
+<div>
+  <div class="container" id="company-detail-component">
+    <!-- <shared-navbar-unauth-component
+      [peersviewLogo]="true"
+      [logo]="true"
+      [isLogoBlue]="true"
+      [aboutUsSecond]="true"
+      [signIn]="true"
+    >
+    </shared-navbar-unauth-component> -->
+    <shared-navbar-unauth-component
+    [peersviewLogo]=true
+    [logo] = true
+    [isLogoBlue]=true
+    [jobs]=true
+    [employers]= true
+    [signIn]=true
+    [signUp]=true>
+  </shared-navbar-unauth-component>
+    <div class="company-detail-component">
+      <div class="container">
+        <a [routerLink]="['/companies']" class="back-btn">
+          <i class="material-icons">keyboard_arrow_left</i>
+          Back to Companies List
+        </a>
+
+        <div class="col-md-8 student-community-feed">
+          <div class="row">
+            <div class="col-md-9 job-content" *ngIf="company">
+              <div class="company">
+                <!-- <h3 class="title">Company Profile</h3> -->
+                <h3 class="title" style="margin: 0px;;">&nbsp;</h3>
+              </div>
+
+              <div class="header">
+                <div class="logo">
+                  <cl-image
+                    class="company-image"
+                    public-id="{{
+                      company.logo ? company.logo : 'avatar'
+                    }}"
+                  >
+                    <cl-transformation width="50" height="50" gravity="custom">
+                    </cl-transformation>
+                  </cl-image>
+                  <!-- <img src="/src/assets/images/company_logo.svg" alt="LOGO"/> -->
+                </div>
+              </div>
+
+              <div class="company">
+                <h3 class="title" [innerHtml]="company.company"></h3>
+              </div>
+
+              <div class="info-wrapper d_flex m-peersview-yt-2">
+                <div class="flex_1">
+                  <img
+                    class="icon m-peersview-xr-1"
+                    src="https://res.cloudinary.com/peersview-com/image/upload/v1585225285/job_status_component_jub2oq.png"
+                    alt="icon"
+                  />
+                  <span class="name"> 100 Jobs Available</span>
+                </div>
+                <div class="flex_1">
+                  <img
+                    class="icon m-peersview-xr-1"
+                    src="https://res.cloudinary.com/peersview-com/image/upload/v1585225325/map-pin-5-line_chaco6.svg"
+                    alt="icon"
+                  /><span class="name" [innerHtml]="company.city"></span>,&nbsp;
+                  <span class="name" [innerHtml]="company.country"></span>
+                </div>
+              </div>
+              <div class="info-wrapper d_flex m-peersview-yt-2">
+                <div class="flex_1">
+                  <img
+                    class="icon m-peersview-xr-1"
+                    src="https://res.cloudinary.com/peersview-com/image/upload/v1586409577/group-line_cxua0v.svg"
+                    alt="icon"
+                  />
+                  <span class="name" [innerHtml]="company.company_size">
+                    employees</span
+                  >
+                </div>
+                <div class="flex_1">
+                  <img
+                    class="icon m-peersview-xr-1"
+                    src="https://res.cloudinary.com/peersview-com/image/upload/v1586409414/phone-line_uxlxud.svg"
+                    alt="icon"
+                  />
+                  <span
+                    class="name"
+                    [innerHtml]="company.company_contact"
+                  ></span>
+                </div>
+              </div>
+
+              <div>
+                <div class="content">
+                  <p class="title">About Company</p>
+                  <span>
+                    {{ company.company_bio }}
+                  </span>
+                </div>
+              </div>
+              <div>
+                <div class="content">
+                  <p class="title">Company Type</p>
+                  <span>
+                    {{ company.company_type }}
+                  </span>
+                </div>
+              </div>
+              <div>
+                <div class="content">
+                  <p class="title">Recuitment:</p>
+                  <span>
+                    {{ company.recruit === 0 ? 'No' : 'Yes' }}
+                  </span>
+                </div>
+              </div>
+              <div class="content">
+                <p class="title">Industry</p>
+                <div class="tags-wrapper d_flex flex_wrap m-peersview-y-2">
+                  <span class="tag">{{ company.industry}}</span>
+                </div>
+              </div>
+
+              <div class="content pb-48">
+                <p class="title">What Do We Offer</p>
+                <ul>
+                  <li>We are the best in the world</li>
+                  <li>Savings for retirement</li>
+                  <li>Learning</li>
+                  <li>Development</li>
+                  <li>Integrity</li>
+                </ul>
+              </div>
+
+              <div class="content">
+                <p class="title">Images</p>
+                <div class="img-to-upload-list" *ngIf="images">
+                    <div class="img-crop" *ngFor="let image of images; let i = index;">
+                      <div class="banner">
+                      <cl-image
+                      class="company-image"
+                      public-id="{{
+                        image.cloudinaryPublicId
+                      }}"
+                    >
+                      <cl-transformation width="60" height="50" gravity="custom">
+                      </cl-transformation>
+                    </cl-image>
+                    </div>
+                 <hr>
+                </div>
+               </div>
+
+            </div>
+
+
+            <div class="content">
+              <p class="title">Videos</p>
+                  <div  *ngFor="let video of videos; let i = index;">
+
+                  <cl-video
+                  class="banner-video"
+
+                  public-id="{{
+                    video.cloudinaryPublicId
+                  }}"
+                    controls="true">
+                   <cl-transformation crop="scale">
+                      </cl-transformation>
+                      </cl-video>
+
+                  <!-- <img src="/src/assets/images/company_logo.svg" alt="LOGO"/> -->
+               <hr>
+             </div>
+            </div>
+
+
+            </div>
+
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="company">
+            <h3 class="title">Suggested Companies</h3>
+          </div>
+          <company-card-suggested-component [companyId]="companyId"></company-card-suggested-component>
+        </div>
+      </div>
+    </div>
+  </div>
+  <index-footer-component></index-footer-component>
+</div>

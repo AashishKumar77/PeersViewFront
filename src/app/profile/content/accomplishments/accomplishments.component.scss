@@ -1,0 +1,184 @@
+.profile-accomplishments {
+    @media only screen and (min-width : 992px) {
+        padding-left: 5rem;
+        padding-top: 6rem;
+    }
+  .accomplishments {
+    // min-height: 50px;
+    padding-top: 10px;
+    border-top: 0;
+    // border-bottom: 1px solid #e5e5e5;
+    font-size: 18px;
+    margin-top: 0px;
+    color: #323c47 !important;
+
+    .accomplishments-data {
+      font-size: 14px;
+      font-family: 'unset';
+      color: #333333;
+    }
+  }    
+  
+  .profile-bottom-section {
+    margin-top: 20px;
+    // border: 1px solid #dbdbdb;
+    background-color: #ffffff;
+
+    .acc-section {
+        box-shadow: 0px 0px 7px 1px gainsboro;
+        margin-bottom: 1rem;
+    }
+    .collections, .interests, .media-pictures  {
+      position: relative;
+      min-height: 50px;
+      display: flex;
+      align-items: center;
+
+    .info-label {
+        padding-left: 0.7rem;
+    }
+
+      .gpa-icon {
+        background: url('https://res.cloudinary.com/peersview-com/image/upload/v1586920769/user-2-line_1_rcwjhd.svg') no-repeat;
+        background-size: contain;
+        height: 2.5rem;
+        width: 2.5rem;
+     }
+
+      .edit-icon {
+        background: url('https://res.cloudinary.com/peersview-com/image/upload/v1586920321/edit-box-line_qidgxq.svg') no-repeat;
+        background-size: contain;
+        height: 2.5rem;
+        width: 2.5rem;
+     }
+
+     .experience-icon {
+        background: url('https://res.cloudinary.com/peersview-com/image/upload/v1586920863/building-3-line_hisiaj.svg') no-repeat;
+        background-size: contain;
+        height: 2.5rem;
+        width: 2.5rem;
+     }
+
+     .education-icon {
+        background: url('https://res.cloudinary.com/peersview-com/image/upload/v1587133484/building-2-line_hx3umc.svg') no-repeat;
+        background-size: contain;
+        height: 2.5rem;
+        width: 2.5rem;
+     }
+
+     .skills-icon {
+        background: url('https://res.cloudinary.com/peersview-com/image/upload/v1586920394/shield-flash-line_tow7dj.svg') no-repeat;
+        background-size: contain;
+        height: 2.5rem;
+        width: 2.5rem;
+     }
+
+     .trophy-icon {
+        background: url('https://res.cloudinary.com/peersview-com/image/upload/v1586920890/trophy-line_nqtzhx.svg') no-repeat;
+        background-size: contain;
+        height: 2.5rem;
+        width: 2.5rem;
+     }
+      // padding-top: 10px;
+      // border-top: 0;
+      // border-bottom: 1px solid #e5e5e5;
+    //   border-top: 1px solid #e5e5e5;
+      font-size: 16px;
+      font-weight: bold;
+      text-align: left;
+      padding-left: 10px;
+      // font-family: 'Conv_MavenPro-Bold';
+      // color: #333;
+    }    
+    .interests-data {
+      li {
+        margin: 18px;
+        border: 1px solid #631990;
+        border-radius: 20px;
+        padding: 3px;
+      }
+      .row {
+        margin: 0;
+      }
+    }
+
+    .profile-add-icon {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      cursor: pointer;
+    }
+
+    i {
+      color: #631990;
+    }
+
+    
+    // .font-size {
+    //   font-size: 21px;
+    // }   
+    
+    .experience-item {
+
+      p{
+        font-size: 1.5rem;
+      }
+      position: relative;
+      padding: 5px;
+      padding-left: 4rem;
+
+      .gpa-text {
+        text-align: left;
+        font-size: 14px;
+      }
+
+      .company-name {
+        margin-bottom: 0;
+        font-weight: bold;
+        font-size: 1.8rem;
+      }
+
+      .company-duration-mobile{
+        font-size: 1.5rem;   
+        margin-bottom: 5px;   
+      }
+      .company-duration {
+        font-size: 12px;
+        margin-bottom: 5px;
+      }
+
+      .company-description{
+        font-size: 16px; 
+      }
+      
+      .company-role {
+        margin-bottom: 0px;
+      }
+
+      .profile-update-icon {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+      }
+      .info-edit-icon {
+        position: absolute;
+        top: 28px;
+        right: 10px;
+        cursor: pointer;
+      }
+    }
+
+    .skills-wrapper {
+      .skill-item {
+        padding: 5px 10px;
+        min-width: 80px;
+        display: inline-block;
+        border-radius: 20px;
+        border: 1px solid grey;
+        text-align: center;
+        margin: 5px;
+      }
+    }
+  }
+}

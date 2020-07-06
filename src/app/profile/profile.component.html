@@ -1,0 +1,118 @@
+<shared-navbar-component></shared-navbar-component>
+<div class="profile-component container">
+  <profile-left-sidebar-component
+    class="col-lg-3 col-md-3"
+    *ngIf="user"
+    [user]="user"
+    [followees]="followees"
+  >
+  </profile-left-sidebar-component>
+
+  <profile-content-component
+    class="col-lg-6 col-md-6 hidden-xs hidden-sm"
+    [user]="user"
+  >
+  </profile-content-component>
+  <profile-right-sidebar-component
+    [followees]="followees"
+    [followers]="followers"
+    class="col-lg-3 col-md-3 hidden-xs hidden-sm">
+  </profile-right-sidebar-component>
+
+  <div class="follow-containers text-center hidden-md hidden-lg">
+    <h4 class="follow-me">Follow Me Here</h4>
+    <div class="followUp-icon">
+      <a class="follow-fb" href="user?.instagram_profile" target="_blank">
+      </a>
+      <a class="follow-twitter" href="user?.twitter_profile" target="_blank">
+      </a>
+      <a class="follow-in" href="https://www.linkedin.com" target="_blank">
+      </a>
+    </div>
+  </div>
+  <!-- Student / Ex-Student Profile -->
+  <div class="mobile-view-for-timeline-and-right-component hidden-md hidden-lg" *ngIf="user?.userTypeId != 3">
+    <!-- <div class="mobile-social-media-container">
+      <shared-social-component></shared-social-component>
+    </div> -->
+    <ul class="mobile-options">
+      <li
+        [ngClass]="{'active' : mobileLinkSelected === 'accomplishments'}"
+       >
+        <a (click)="onClickSelectMobileLink('accomplishments')">Accomplishments</a>
+      </li>
+      <li
+        [ngClass]="{'active' : mobileLinkSelected === 'timeline'}"
+        >
+        <a (click)="onClickSelectMobileLink('timeline')">Timeline</a>
+      </li>
+<!--       <li
+        [ngClass]="{'active' : mobileLinkSelected === 'media'}"
+        >
+        <a (click)="onClickSelectMobileLink('media')">Media</a>
+      </li> -->
+      <li
+        [ngClass]="{'active' : mobileLinkSelected === 'following'}"
+        >
+        <a (click)="onClickSelectMobileLink('following')">Connections ({{followees.length}})</a>
+      </li>
+      <!-- <li
+        [ngClass]="{'active' : mobileLinkSelected === 'followers'}"
+        >
+        <a (click)="onClickSelectMobileLink('followers')">Followers ({{followers.length}})</a>
+      </li> -->
+    </ul>
+    <div class="mobile-layout-content">
+      <profile-content-accomplishments-component [user]="user" *ngIf="mobileLinkSelected === 'accomplishments'"></profile-content-accomplishments-component>
+      <profile-content-activities-component [user]="user" *ngIf="mobileLinkSelected === 'timeline'"></profile-content-activities-component>
+      <div class="temporary-containers-for-mobile-tab" *ngIf="mobileLinkSelected === 'media'">
+        <h4 class="text-center">No images available.</h4>
+      </div>
+      <shared-followee-component *ngIf="mobileLinkSelected === 'following'" [followees]="followees"></shared-followee-component>
+      <shared-followers-component *ngIf="mobileLinkSelected === 'followers'" [followers]="followers"></shared-followers-component>
+      <!-- <div class="temporary-containers-for-mobile-tab" *ngIf="mobileLinkSelected === 'accomplishments'">
+          <h4 class="text-center">No accomplishments available.</h4>
+        </div> -->
+    </div>
+  </div>
+  <!-- Organization/Institution Profile -->
+  <div class="mobile-view-for-timeline-and-right-component hidden-md hidden-lg" *ngIf="user?.userTypeId == 3">
+    <ul class="mobile-options">
+      <li
+        [ngClass]="{'active' : mobileLinkSelected === 'timeline'}"
+        >
+        <a (click)="onClickSelectMobileLink('timeline')">Timeline</a>
+      </li>
+      <li
+        [ngClass]="{'active' : mobileLinkSelected === 'jobs'}"
+       >
+        <a (click)="onClickSelectMobileLink('jobs')">Jobs</a>
+      </li>
+      <!-- <li
+        [ngClass]="{'active' : mobileLinkSelected === 'events'}"
+       >
+        <a (click)="onClickSelectMobileLink('events')">Events</a>
+      </li> -->
+      <li
+        [ngClass]="{'active' : mobileLinkSelected === 'following'}"
+        >
+        <a (click)="onClickSelectMobileLink('following')">Connections ({{followees.length}})</a>
+      </li>
+      <!-- <li
+        [ngClass]="{'active' : mobileLinkSelected === 'followers'}"
+        >
+        <a (click)="onClickSelectMobileLink('followers')">Followers ({{followers.length}})</a>
+      </li> -->
+    </ul>
+    <div class="mobile-layout-content">
+      <profile-content-jobs-component [user]="user" *ngIf="mobileLinkSelected === 'jobs'"></profile-content-jobs-component>
+      <profile-content-events-component [user]="user" *ngIf="mobileLinkSelected === 'events'"></profile-content-events-component>
+      <profile-content-activities-component [user]="user" *ngIf="mobileLinkSelected === 'timeline'"></profile-content-activities-component>
+      <div class="temporary-containers-for-mobile-tab" *ngIf="mobileLinkSelected === 'media'">
+        <h4 class="text-center">No images available.</h4>
+      </div>
+      <shared-followee-component *ngIf="mobileLinkSelected === 'following'" [followees]="followees"></shared-followee-component>
+      <shared-followers-component *ngIf="mobileLinkSelected === 'followers'" [followers]="followers"></shared-followers-component>
+    </div>
+  </div>
+</div>

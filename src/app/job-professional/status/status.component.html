@@ -1,0 +1,89 @@
+<div class="job-status-page">
+    <div class="container">
+        <a class="back" [routerLink]="['/job-professional']">
+            <i class="material-icons">arrow_back</i>
+            Career Center
+        </a>
+        <div class="header">
+            <a [ngClass]="{'active': isJobStatus}" (click)="isJobStatus=true;">Job Status</a>
+            <a [ngClass]="{'active': !isJobStatus}" (click)="isJobStatus=false;">Save an Application</a>
+        </div>
+        <div class="content-wrapper">
+            <div id="job-status-tab-content" *ngIf="isJobStatus">
+                <div *ngFor="let job of jobs" class="mb-25 saved-item">
+                    <jobs-status-item-component [job]="job" (deleteJob)="deleteJobEvent($event)"></jobs-status-item-component>
+                </div>
+            </div>
+            <div id="job-application-tab-content" *ngIf="!isJobStatus">
+                <form [formGroup]="jobComposeForm" (ngSubmit)="onSave()">
+                    <div class="form-content d_flex">
+                        <div class="left-fields flex_1">
+
+                            <div class="form-group">
+                                <label>Job Title</label>
+                                <input type="text" formControlName="title" class="form-control">
+                                <div *ngIf="f.title.touched && f.title.errors" class="validation-error">
+                                    <div *ngIf="f.title.errors.required">
+                                        Job title is required.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Date of Application</label>
+                                <mat-form-field>
+                                    <input matInput formControlName="deadline" placeholder="Deadline"
+                                        [matDatepicker]="picker1" name="from">
+                                    <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                                    <mat-datepicker #picker1></mat-datepicker>
+                                </mat-form-field>
+                                <div *ngIf="f.deadline.touched && f.deadline.errors" class="validation-error">
+                                    <div *ngIf="f.deadline.errors.required">
+                                        Date of Application is required.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Link to the Job post</label>
+                                <input type="text" formControlName="source_link" class="form-control" placeholder="www.peersview.com">
+                                <div *ngIf="f.source_link.touched && f.source_link.errors" class="validation-error">
+                                    <div *ngIf="f.source_link.errors.required">
+                                        Job link is required.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="right-fields flex_1">
+                            <div class="form-group">
+                                <label>Company Name</label>
+                                <input type="text" formControlName="company" class="form-control">
+                                <div *ngIf="f.company.touched && f.company.errors" class="validation-error">
+                                    <div *ngIf="f.company.errors.required">
+                                        Company Name is required.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Job Description</label>
+                                <textarea type="text" formControlName="jobfunction" class="form-control"></textarea>
+                                <span
+                                    class="text-limit">{{f.jobfunction.value ? f.jobfunction.value.length : 0}}/512</span>
+                                <div *ngIf="f.jobfunction.touched && f.jobfunction.errors" class="validation-error">
+                                    <div *ngIf="f.jobfunction.errors.required">
+                                        Job function is required.
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <input type="checkbox" formControlName="isApplied"/>
+                                Have you applied?
+                            </div>
+                        </div>
+                    </div>
+                    <div class="button-wrapper">
+                        <button type="submit" class="btn-peersview-primary btn-peersview-md">Save Job</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

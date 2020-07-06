@@ -1,0 +1,47 @@
+<div class="job-resume-review-component ">
+  <div class="top-section">
+    <div class="top-bg-image image">
+       <img src="" /> 
+    </div>
+
+    <a class="back" [routerLink]="['/job-professional']">
+      <i class="material-icons">arrow_back</i>
+      Career Center
+    </a>
+    <div class="slogan">
+      Cover Letter Review
+    </div>
+
+  </div>
+  <div class="mddile-container">
+    <h3 class="middle-title">Let's Get Started</h3>
+    <p class="middle-content">Paste the text of your resume into the first box to review. If you want to review Your
+      Cover letter
+      Paste it in the second box and find out why aren't you getting calls for your next interview.
+    </p>
+    <h3 class="middle-title">Don't have a Resume or cover letter? </h3>
+
+    <button class="middle-btn">Try Simple Resume Or Cover Letter</button>
+    <div class="resume-container">
+      <div>
+        <h4 class="box-title">Paste or Upload Resume</h4>
+        <diV class="upload-section">
+          <input type="File" (change)="onFileChange($event)" style="display:none;" #fileInput />
+          <img src="https://res.cloudinary.com/peersview-com/image/upload/v1587694231/file-upload-line_jzijlf.svg" (click)="fileInput.click()" />
+        </diV>
+      </div>
+
+      <div>
+        <h4 class="box-title">Paste Job Description Resume</h4>
+        <div class="upload-section">
+          <div class="form-group">
+            <textarea placeholder="Paste here..." rows="18" cols ="41" class="form-control"></textarea>
+          </div>
+          <!-- <input type="File" (change)="onFileChange($event)" style="display:none;" #fileInput />
+          <img src="" (click)="fileInput.click()" /> -->
+        </div>
+      </div>
+    </div>
+    <button class="middle-btn" style="width: 15rem;">Review</button>
+  </div>
+</div>

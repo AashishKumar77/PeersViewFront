@@ -1,0 +1,160 @@
+<div class="sign-up-component">
+  <div class="sign-up-form">
+    <form #signUpForm="ngForm" (ngSubmit)="onSignUp(signUpForm.valid)">
+      <h2 class="text-center">
+        <div style="margin-top: 2rem;">
+          <cl-image
+            class="mouse-pointer"
+            public-id="peersviewLogo"
+            [routerLink]="['/']">
+          </cl-image>
+        </div>
+        <!-- <div class="signupdisplay: flex;
+        justify-content: center;-label">Sign Up</div> -->
+
+      </h2>
+      <div class="signUp-title">
+        <h2 style="font-size: 35px;">Sign Up</h2>
+      </div>
+
+      <!-- <form #signUpForm="ngForm" (ngSubmit)="onSignUp()" class="form-horizontal"> -->
+     <div class="sign-up-container">
+      <div class="first-section">
+      <div class="form-group">
+        <div class="col-sm-12 sign-up-input">
+          <label class="d-block">Email<span>*</span></label>
+          <input type="text" class="form-control" placeholder="Enter your email" name="email" autocomplete="email" [(ngModel)]="user.email" #userEmail="ngModel" required email/>
+          <div *ngIf="userEmail.invalid && (userEmail.dirty || userEmail.touched)" class="alert alert-danger">
+            <div *ngIf="userEmail.errors.required">
+              Email is required
+            </div>
+            <div *ngIf="userEmail.errors.email">
+              Email is invalid
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-12 sign-up-input">
+          <label class="d-block">Password<span>*</span></label>
+          <input type="password" class="form-control" placeholder="Password" name="password" autocomplete="password" [(ngModel)]="user.password" #password="ngModel" required minlength="8" />
+          <div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert alert-danger">
+            <div *ngIf="password.errors.required || password.errors.minlength">
+              Password required at least 8 characters
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-12 sign-up-input">
+          <label class="d-block">Confirm Password<span>*</span></label>
+          <input type="password" class="form-control" placeholder="Confirm Password" name="confirmPassword" autocomplete="confirmPassword" [(ngModel)]="user.confirmPassword" #confirmPass="ngModel" validateEqual="password" required />
+          <div *ngIf="confirmPass.invalid && (confirmPass.dirty || confirmPass.touched)" class="alert alert-danger">
+            <div *ngIf="!confirmPass.errors.validateEqual || password.value !== confirmPass.value">
+              Password mismatch
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> <!-- end first Section -->
+
+
+    <div class="second-section" >
+
+      <div class="form-group">
+        <div class="col-sm-12 sign-up-input">
+          <label class="d-block">First Name<span>*</span></label>
+          <input type="text" class="form-control" placeholder="Enter Yout First Name" name="firstname" autocomplete="firstname" [(ngModel)]="user.firstName" #firstname="ngModel" required  />
+          <div *ngIf="firstname.invalid && (firstname.dirty || firstname.touched)" class="alert alert-danger">
+            <div *ngIf="firstname.errors.required">
+             First Name is required
+            </div>
+            <div *ngIf="firstname.errors.pattern">
+              At least two Names are required
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-12 sign-up-input">
+          <label class="d-block">Surname<span>*</span></label>
+          <input type="text" class="form-control" placeholder="Enter your surname" name="lastname" autocomplete="lastname" [(ngModel)]="user.lastName" #lastname="ngModel" required />
+          <div *ngIf="lastname.invalid && (lastname.dirty || lastname.touched)" class="alert alert-danger">
+            <div *ngIf="lastname.errors.required">
+              Surname is required
+            </div>
+            <div *ngIf="lastname.errors.pattern">
+              At least two Names are required
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-12 sign-up-input">
+          <label class="d-block">School Or Company<span>*</span></label>
+          <input type="text" class="form-control" placeholder="Enter your school or company" name="school" autocomplete="school" [(ngModel)]="user.school" #userschool="ngModel" required  />
+          <div *ngIf="userschool.invalid && (userschool.dirty || userschool.touched)" class="alert alert-danger">
+            <div *ngIf="userschool.errors.required">
+            school or company is required
+            </div>
+            <div *ngIf="userschool.errors.pattern">
+              At least two Names are required
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>   <!-- end second Section -->
+
+  </div>
+
+      <div class="terms-and-condition">
+        <label>
+          <input
+            type="checkbox"
+            name="hasconsented"
+            [(ngModel)]="hasAgreed"
+            #hasAgreedToTerms="ngModel"
+            required/>
+              I agree to the Terms & Conditions, Privacy Policy and Code of Conduct
+        </label>
+        <div *ngIf="hasAgreedToTerms.invalid && (hasAgreedToTerms.dirty || hasAgreedToTerms.touched)" class="alert alert-danger">
+          <div *ngIf="hasAgreedToTerms.errors.required">
+            This is required field
+          </div>
+        </div>
+      </div>
+      <div class="footer-buttons">
+      <button type="submit" class=" signUp-btn btn btn-peersview-primary btn-block btn-peersview-md">Sign Up</button>
+      <h4>Or Sign Up with</h4>
+         <!-- <div class="or-seperator"><i>or</i></div> -->
+         <div class="text-center social-btn">
+        <a class="btn  facebook mouse-pointer" (click)="onSignUpViaSocial('facebook')">
+          <i class="fa fa-facebook"></i>
+          <b>&nbsp;&nbsp;Facebook</b>
+        </a>
+        <!-- <a class="btn btn-block linkedIn mouse-pointer" (click)="onSignUpViaSocial('linkedin')">
+          <i class="fa fa-twitter"></i>
+          Sign up with
+          <b>LinkedIn</b>
+        </a> -->
+        <a class="btn  google mouse-pointer" (click)="onSignUpViaSocial('google')">
+          <i class="fa fa-google"></i>
+          <b>&nbsp;&nbsp;Google</b>
+        </a>
+      </div>
+      <div class="hint-text small">Already have an account?
+        <a class="sign-up-now " [routerLink]="['/sign-in']"><u>Sign-in </u></a>
+      </div>
+      </div>
+
+
+
+    </form>
+
+  </div>
+</div>

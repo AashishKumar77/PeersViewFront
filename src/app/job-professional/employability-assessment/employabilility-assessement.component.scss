@@ -1,0 +1,253 @@
+.employability-assessment-component {
+
+  padding-top: 80px;
+  padding-bottom: 30px;
+
+  .tab-menu {
+    display: inline-flex;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    li {
+      padding: 2px;
+      text-align: center;
+      border: 1px solid;
+      a {
+        font-size: 20px;
+       // font-weight: 500;
+        font-weight: bold;
+        color: #323c47;
+      }
+    }
+    .active {
+      background-color: #f4f4f4;
+      // border-bottom: 2px solid #323c47;
+      // border-bottom-right-radius: 0;
+      // border-bottom-left-radius: 0;
+      &:hover {
+        background-color: #f4f4f4;
+        color: #323c47;
+      }
+    }
+  }
+
+  .back-cover {
+    background: url('https://res.cloudinary.com/peersview-com/image/upload/v1587048235/Group_287_t2mw0k.png') no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-size: 100%;
+    height: auto;
+  }
+
+  .slogan-background {
+    padding-top: 10rem;
+    padding-bottom: 12rem;
+    .slogan{
+      color: #ffffff;
+      text-align: center;
+      font-weight: bold;
+      font-size: 32px;
+    }
+  }
+
+  .first-text {
+    text-align: center;
+    padding-bottom: 32px;
+  }
+
+  .services {
+    margin-left: 10px;
+    margin-right: 10px;
+    display: flex;
+    padding-top: 20px;
+    flex-wrap: wrap;
+  }
+
+  .market-pad-all{
+    padding-left: 24px;
+    padding-right: 24px;
+
+  }
+
+  .back-btn {
+    padding-top: 5%;
+    margin-left: 2%;
+    font-size: 16px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    color: white;
+  }
+
+
+// Custom, iPhone Retina
+@media only screen and (min-width : 320px) {
+    .back-cover {
+        background-size: 100%;
+    }
+
+    .tab-menu {
+
+
+      li a {
+        padding: 2px;
+        font-size: 12px;
+      }
+    }
+    .slogan-background {
+        padding-top:border-right 11%;
+        padding-bottom: 9%;
+        margin-top: 3rem;
+        .slogan{
+            font-size: 1.5rem;
+        }
+    }
+    .container{
+        width: 98%;
+    }
+}
+// extra Small Devices, Phones
+@media only screen and (min-width : 480px) {
+    .back-cover {
+        background-size: 100%;
+    }
+    .tab-menu {
+
+      li a {
+        padding: 4px;
+        font-size: 20px;
+      }
+    }
+    .slogan-background {
+        padding-top: 13%;
+        padding-bottom: 12%;
+        margin-top: 3rem;
+        .slogan{
+            font-size: 2.2rem;
+        }
+    }
+    .container{
+        width: 95%;
+    }
+}
+// Small Devices, Tablets
+@media only screen and (min-width : 768px) {
+    .back-cover {
+        background-size: 100%;
+    }
+    .tab-menu {
+
+      li a {
+        font-size: 20px;
+      }
+      > li {
+       // border-right: unset;
+        &:last-child {
+          // border-right: unset;
+        }
+      }
+    }
+    .slogan-background {
+        padding-top: 14%;
+        padding-bottom: 12%;
+        margin-top: unset;
+        .slogan{
+            font-size: 3rem;
+        }
+
+    }
+    .container{
+        width: 85%;
+    }
+}
+// Medium Devices, Desktops
+@media only screen and (min-width : 992px) {
+    .back-cover {
+        background-size: 100%;
+    }
+    .tab-menu {
+
+      li a {
+        font-size: 20px;
+      }
+      > li {
+       // border-right: unset;
+        &:last-child {
+         // border-right: unset;
+        }
+      }
+    }
+
+    .slogan-background {
+        padding-top: 13%;
+        padding-bottom: 12%;
+        margin-top: unset;
+        .slogan{
+            font-size: 4.5rem;
+        }
+    }
+    .container{
+        width: 85%;
+    }
+}
+// Large Devices, Wide Screens
+@media only screen and (min-width : 1200px) {
+    .back-cover {
+        background-size: 100%;
+    }
+    .tab-menu {
+
+      li a {
+        font-size: 21px;
+      }
+      > li {
+       // border-right: unset;
+        &:last-child {
+       //   border-right: unset;
+        }
+      }
+    }
+
+    .slogan-background {
+        padding-top: 17%;
+        padding-bottom: 14%;
+        margin-top: unset;
+        .slogan{
+            font-size: 4.5rem;
+        }
+    }
+    .container{
+        width: 80%;
+    }
+}
+
+@media only screen and (min-width : 1600px) {
+    .back-cover {
+        background-size: 100%;
+    }
+    .tab-menu {
+
+      li a {
+        font-size: 21px;
+      }
+      > li {
+       // border-right: unset;
+        &:last-child {
+         // border-right: unset;
+        }
+      }
+    }
+
+    .slogan-background {
+        padding-top: 12%;
+        padding-bottom: 12%;
+        margin-top: unset;
+        .slogan{
+            font-size: 5.5rem;
+        }
+    }
+    .container{
+        width: 70%;
+    }
+}
+
+}

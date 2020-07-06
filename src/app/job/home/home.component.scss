@@ -1,0 +1,343 @@
+.job-home-component {
+  .back-cover {
+    //background: url('https://res.cloudinary.com/peersview-com/image/upload/v1587048235/Group_287_t2mw0k.png') no-repeat;
+    background-size: contain; 
+    background-position: center;
+    background-size: 90%;
+    height: auto;
+  }
+  // background: url('https://res.cloudinary.com/peersview-com/image/upload/v1587048235/Group_287_t2mw0k.png') no-repeat;
+  // background-size: contain; 
+  // padding-top: 80px;
+  // padding-bottom: 30px;
+  .container{
+    // margin-top: 60px;
+  }
+  .progress-info {
+    margin-top: 65px;
+    margin-bottom:f 65px;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 20px #25252530;
+    h1 {
+      font-weight: bold;
+      color: #1e1e22;
+      margin-top: 10px;
+    }
+    
+    .items-wrapper {
+      justify-content: center;
+      margin-top: 40px;
+
+      .item {
+        width: 275px;
+        text-align: center;
+        margin: 10px;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0px 5px 20px #25252530;
+
+        span {
+          padding: 15px;
+          background-color: #d280ff;
+          display: inline-block;
+          border-radius: 10px;
+        }
+
+        .text {
+          font-size: 18px;
+          font-weight: bold;
+          color: #1e1e22;
+          margin-top: 30px;
+          margin-bottom: 20px;
+
+        }
+
+        .count {
+          font-size: 42px;
+          font-weight: bold;
+          color: #53d769;
+        }
+      }
+    }
+  }
+
+  .text {
+    font-size: 18px;
+    //font-weight: bold;
+    color: #1e1e22;
+    text-align: center;
+    line-height: 1.5em;
+    //padding: 10px;
+  }
+
+  
+  .sub-title {
+    color: black;
+    font-size: 28px ;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .sub-sub-title {
+    color: black;
+    font-size: 16px;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .slogan-background {
+    padding-top: 14rem;
+    padding-bottom: 4rem;
+    .slogan{
+      //color: #ffffff;
+      text-align: center;
+      font-weight: bold;
+      font-size: 44px;
+    }
+  }
+  .services {
+
+    margin-left: -10px;
+    margin-right: -10px;
+    display: flex;
+    padding-top: 20px;
+    
+    .item {
+      flex: 0 1 25%;
+      padding: 10px;
+
+      img {
+        width: 100%;
+      }
+
+      .card {
+        width: 100%;
+        padding-top: 100%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        border-radius: 10px;
+        overflow: hidden;
+
+        .backdrop {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          left: 0px;
+          top: 0px;
+          background-color: #0000007a;
+        }
+
+        p {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          color: white;
+          font-size: 18px;
+          font-weight: bold;
+          text-align: center;
+        }
+      }
+    }
+
+    .bg1 {
+      background-image: url("https://res.cloudinary.com/peersview-com/image/upload/v1584475188/ben-white-mO9vKbG5csg-unsplash_bmouwf.jpg");
+    }
+
+    .bg2 {
+      background-image: url("https://res.cloudinary.com/peersview-com/image/upload/v1587047771/ben-white-mO9vKbG5csg-unsplash_lyp3tk.png");
+    }
+
+    .bg3 {
+      background-image: url("https://res.cloudinary.com/peersview-com/image/upload/v1584475381/tim-van-der-kuip-CPs2X8JYmS8-unsplash_vjnv14.jpg");
+    }
+
+    .bg4 {
+      background-image: url("https://res.cloudinary.com/peersview-com/image/upload/v1584475318/christin-hume-Hcfwew744z4-unsplash_uy5xko.jpg");
+    }
+
+  }
+  @media (max-width: 991px) {
+    .services {
+      flex-wrap: wrap;
+      .item {
+        flex: 0 1 50%;
+      }
+    }
+  }
+
+  @media (max-width: 420px) {
+    .services {
+      display: flex;
+    }
+    .services  .item {width: 50%;}
+  }
+  @media only screen and (max-width : 768px) {
+    .items-wrapper {
+      display: block;
+
+      .item {
+        margin: 10px auto !important;
+      }
+    }
+  }
+//*******************************************************************//
+    // Custom, iPhone Retina
+    @media only screen and (max-width : 320px) {
+        .back-cover {
+            background-size: 100%;
+        } 
+        .slogan-background {
+            padding-top: 6%;
+            padding-bottom: 0%;
+            margin-top: 12rem;
+            .slogan{
+                font-size: 2.5rem;
+            }
+        }
+        .container{
+            width: 75%;
+        }
+
+        .sub-title {
+          font-size: 2rem;
+        }
+    }
+
+    // Custom, iPhone Retina
+    @media only screen and (min-width : 320px) {
+        .back-cover {
+            background-size: 100%;
+        } 
+        .slogan-background {
+            padding-top: 6%;
+            padding-bottom: 0%;
+            margin-top: 12rem;
+            .slogan{
+                font-size: 2.5rem;
+            }
+        }
+        .sub-title {
+          font-size: 2rem;
+        }
+        .container{
+            width:100%;
+        }
+    }
+    // extra Small Devices, Phones
+    @media only screen and (min-width : 480px) {
+        .back-cover {
+            background-size: 100%;
+        } 
+        .slogan-background {
+            padding-top: 8%;
+            padding-bottom: 0%;
+            margin-top: 12rem;
+            .slogan{
+                font-size: 2.5rem;
+            }
+        }
+        .sub-title {
+          font-size: 2rem;
+        }
+        .container{
+            width: 75%;
+        }
+    }
+    // Small Devices, Tablets
+    @media only screen and (min-width : 768px) {
+        .back-cover {
+            background-size: 100%;
+        } 
+        .slogan-background {
+            padding-top: 8%;
+            padding-bottom: 0%;
+            margin-top: 7rem;
+            .slogan{
+                font-size: 3rem;
+            }
+
+        }
+        .sub-title {
+          font-size: 2.5rem;
+        }
+        .container{
+            width: 65%;
+        }
+    }
+    // Medium Devices, Desktops
+    @media only screen and (min-width : 992px) {
+        .back-cover {
+            background-size: 100%;
+        } 
+        .slogan-background {
+            padding-top: 8%;
+            padding-bottom: 0%;
+            margin-top: 5rem;
+            .slogan{
+                font-size: 4.5rem;
+            }
+        }
+        .sub-title {
+          font-size: 3.5rem;
+        }
+        .container{
+            width: 95%;
+        } 
+    }
+    // Large Devices, Wide Screens
+    @media only screen and (min-width : 1200px) {
+        .back-cover {
+            background-size: 100%;
+        }
+        .slogan-background {
+            padding-top: 8%;
+            padding-bottom: 0%;
+            margin-top: unset;
+            .slogan{
+                font-size: 4.5rem;
+            }
+        }
+        .sub-title {
+          font-size: 3.5rem;
+        }
+        .container{
+            width: 85%;
+        } 
+    }
+
+    @media only screen and (min-width : 1600px) {
+        .back-cover {
+            background-size: 100%;
+        }
+        .slogan-background {
+            padding-top: 8%;
+            padding-bottom: 0%;
+            margin-top: unset;
+            .slogan{
+                font-size: 4.5rem;
+            }
+        }
+        .sub-title {
+          font-size: 3.5rem;
+        }
+        .container{
+            width: 80%;
+        }
+    }
+
+}
+
+@media screen and (max-width:450px){
+  .job-home-component .slogan-background .slogan {
+    font-size: 2rem;
+}
+}
+@media screen and (max-width:320px){
+  .job-home-component .sub-title {
+    font-size: 1.8rem;
+}
+}

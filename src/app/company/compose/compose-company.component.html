@@ -1,0 +1,193 @@
+<div class="compose-company-component">
+  <div class="container">
+    <a [routerLink]="['/account-settings/company-profile']" class="back-btn">
+      <i class="material-icons">keyboard_arrow_left</i>
+      Back to Companies List
+    </a>
+    <div class="col-xs-12">
+    <div class="row">
+      <div class="col-md-9 " >
+    <form [formGroup]="companyComposeForm" (ngSubmit)="onSave()">
+      <div class="title">
+        <h1>Create Company Profile</h1>
+      </div>
+      <div class="form-content d_flex">
+        <div class="left-fields flex_1">
+          <div class="form-group">
+            <label>Company Name:</label>
+            <input type="text" formControlName="company" class="form-control">
+            <div *ngIf="f.company.touched && f.company.errors" class="validation-error">
+              <div *ngIf="f.company.errors.required">
+                Company Name is required.
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Company Type:</label>
+            <input type="text" formControlName="company_type" class="form-control">
+            <div *ngIf="f.company_type.touched && f.company_type.errors" class="validation-error">
+              <div *ngIf="f.company_type.errors.required">
+                Company Type is required.
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Company Size:</label>
+            <input type="text" formControlName="company_size" class="form-control">
+            <div *ngIf="f.company_size.touched && f.company_size.errors" class="validation-error">
+              <div *ngIf="f.company_size.errors.required">
+                Company Size is required.
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Contact Information:</label>
+            <input type="text" formControlName="company_contact" class="form-control">
+            <div *ngIf="f.company_contact.touched && f.company_contact.errors" class="validation-error">
+              <div *ngIf="f.company_contact.errors.required">
+                Contact Information is required.
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Country:</label>
+            <select class="form-control" formControlName="country" name="country">
+              <option selected="selected" disabled>Select Country</option>
+              <option *ngFor="let country of countries" value={{country.name}}>{{country.name}}</option>
+            </select>
+            <div *ngIf="f.country.touched && f.country.errors" class="validation-error">
+              <div *ngIf="f.country.errors.required">
+                Country is required.
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>City:</label>
+            <input type="text" formControlName="city" class="form-control">
+            <div *ngIf="f.city.touched && f.city.errors" class="validation-error">
+              <div *ngIf="f.city.errors.required">
+                City is required.
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+          <!-- Rounded switch -->
+          <label>Recuitment:</label>
+            <div>
+              <label class="switch">
+                <input type="checkbox" formControlName="recruit" class="form-control">
+               <span class="slider round"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="right-fields flex_1">
+          <div class="form-group">
+            <label>Industry:</label>
+            <select class="form-control" formControlName="industry" name="industry">
+              <option selected="selected" disabled>Select Industry</option>
+              <option *ngFor="let industry of industries" value={{industry.name}}>{{industry.name}}</option>
+            </select>
+            <div *ngIf="f.industry.touched && f.industry.errors" class="validation-error">
+              <div *ngIf="f.industry.errors.required">
+                Industry is required.
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>About Company:</label>
+            <textarea type="text" formControlName="company_bio" class="form-control"></textarea>
+            <span class="text-limit">{{form.company_bio ? form.company_bio.length : 0}}/512</span>
+            <div *ngIf="f.company_bio.touched && f.company_bio.errors" class="validation-error">
+              <div *ngIf="f.company_bio.errors.required">
+                About Company is required.
+              </div>
+            </div>
+          </div>
+
+          <!-- <div class="form-group">
+              <label>Experience:</label>
+              <textarea type="text" [(ngModel)]="form.experience" [ngModelOptions]="{standalone: true}" #experience="ngModel" class="form-control" required></textarea>
+              <div *ngIf="experience.invalid && (experience.dirty || experience.touched)" class="validation-error">
+                <div *ngIf="experience.errors.required">
+                  Experience is required.
+                </div>
+              </div>
+            </div> -->
+          <div *ngIf="!isEdit" class="form-group">
+            <label>Company Logo:</label>
+
+            <shared-company-upload-image-component
+              [uploadOptions]="{'queueLimit': 5, 'event': 'company'}"
+              (uploadComplete)="onUploadComplete($event)"
+              (imageIsSelected)="onImageSelected($event)"
+            ></shared-company-upload-image-component>
+            <div *ngIf="!imageSelected && isSubmitted" class="validation-error">
+              <div>
+                Company Logo is required.
+              </div>
+            </div>
+          </div>
+
+          <div *ngIf="isEdit" class="form-group">
+            <div class="content">
+              <p class="title">Files/Images:</p>
+              <div class="img-to-upload-list" *ngIf="attachments">
+                <div class="logo">
+                  <div class="img-crop" *ngFor="let image of attachments; let i = index;">
+                    <div class="remove-img" (click)="onDeleteItem(image)">
+                      <i class="material-icons">close</i>    {{ image.usage }}
+                    </div>
+                    <div *ngIf="image.usage === 'logo' || image.usage === 'image'">
+                    <cl-image
+                    class="company-image"
+                    public-id="{{
+                      image.cloudinaryPublicId
+                    }}"
+                  >
+                    <cl-transformation width="60" height="50" gravity="custom">
+                    </cl-transformation>
+                  </cl-image>
+                </div>
+                <div *ngIf="image.usage === 'video'">
+                  <cl-video
+                  class="company-image"
+                  public-id="{{
+                    image.cloudinaryPublicId
+                  }}"
+                    controls="true">
+                   <cl-transformation crop="pad">
+                      </cl-transformation>
+                      </cl-video>
+
+              </div>
+                </div>
+
+              </div>
+             </div>
+          </div>
+          <label>Company Logo:</label>
+            <shared-company-upload-image-component
+              [uploadOptions]="{'queueLimit': 5, 'event': 'company'}"
+              (uploadComplete)="onUploadComplete($event)"
+              (imageIsSelected)="onImageSelected($event)"
+            ></shared-company-upload-image-component>
+            <div *ngIf="!imageSelected && isSubmitted" class="validation-error">
+              <div>
+                Company Logo is required.
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="button-wrapper">
+        <button type="submit" class="btn-peersview-primary btn-peersview-md">Save</button>
+      </div>
+    </form>
+    </div>
+    </div>
+  </div>
+</div>
+</div>

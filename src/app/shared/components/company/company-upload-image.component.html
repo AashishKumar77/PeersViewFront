@@ -1,0 +1,56 @@
+<div class="shared-upload-image-component">
+  <div class="file-drop-container" ng2FileDrop [uploader]="uploader" (fileOver)="onFileOverBase($event)" [ngClass]="{'nv-file-over': hasBaseDropZoneOver}">
+    <form>
+      <input class="upload-file" id="uploadImage" accept="image/*" ng2FileSelect #fileInput type="file" style="display:none;" multiple [uploader]="uploader" (change)="fileInput.value=''" accept="image/gif, image/jpeg, image/png" />
+    </form>
+    <div class="img-to-upload-list" *ngIf="imagesToUpload">
+      <div class="img-crop" *ngFor="let imageUrl of imagesToUpload; let i = index;">
+        <div class="remove-img" (click)="onRemoveFromQueue(i)"><i class="material-icons">close</i></div>
+        <img class="{{'img-' + queuedImageOrientation[i]}}" [src]="imageUrl">
+      </div>
+      <label
+        for="uploadImage"
+        class="img-crop img-crop-add-photo"
+        *ngIf="imagesToUpload.length !== 1"
+      >
+        <i class="material-icons">add_circle_outline</i>
+      </label>
+    </div>
+  </div>
+    <div  class="file-drop-container" ng2FileDrop [uploader]="uploader1" (fileOver)="onFileOverBase($event)" [ngClass]="{'nv-file-over': hasBaseDropZoneOver}">
+      Files/Images
+      <form>
+        <input class="upload-file" id="uploadImage1" ng2FileSelect #fileInput type="file" style="display:none;" multiple [uploader]="uploader1" (change)="fileInput.value=''" accept="image/gif, image/jpeg, image/png" />
+      </form>
+      <div class="img-to-upload-list" *ngIf="imagesToUpload1">
+        <div class="img-crop" *ngFor="let imageUrl of imagesToUpload1; let i = index;">
+          <div class="remove-img" (click)="onRemoveFromQueue1(i)"><i class="material-icons">close</i></div>
+            <div class="img-crop" *ngIf="imageUrl.includes('data:image/')">
+                 <img class="{{'img-' + queuedImageOrientation[i]}}" [src]="imageUrl">
+            </div>
+
+            <div class="img-crop" *ngIf="imageUrl.includes('data:video/')">
+              <video >
+                  <source class="{{'img-' + queuedImageOrientation[i]}}" [src]="imageUrl" >
+              </video>
+            </div>
+        </div>
+        <label
+          for="uploadImage1"
+          class="img-crop img-crop-add-photo"
+          *ngIf="imagesToUpload1.length !== 5"
+        >
+          <i class="material-icons">add_circle_outline</i>
+        </label>
+      </div>
+      <!-- *ngIf="uploadInProgress" -->
+    <div class="file" *ngIf="isUploadStarted">
+      <div class="upload-status" *ngIf="!isUploadComplete">
+        <div>Uploading...</div>
+        <mat-progress-bar mode="buffer"></mat-progress-bar>
+      </div>
+      <div class="upload-complete" *ngIf="isUploadComplete">Upload Complete!</div>
+    </div>
+  </div>
+
+  </div>

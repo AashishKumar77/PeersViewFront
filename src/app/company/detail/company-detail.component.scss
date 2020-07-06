@@ -1,0 +1,147 @@
+.company-detail-component {
+  padding-top: 10px;
+
+  .container{
+    margin-bottom: 32px;
+  }
+
+  .title {
+    color: #631990;
+    margin-top: 24px;
+    margin-bottom: 30px;
+    font-size: 27px;
+  }
+
+  .header {
+    display: flex;
+    align-items: center;
+
+    .logo {
+      margin-right: 20px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+
+    .company {
+      .name {
+        display: block;
+        font-size: 20px;
+        line-height: 24px;
+        color: #1e1e22;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+
+    }
+  }
+
+  .banner {
+    margin-right: 20px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  .banner-video {
+    margin-right: 20px;
+
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+  .back-btn {
+    display: flex;
+    align-items: center;
+  }
+
+  ul li::before {
+    content: "\2022";
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+  }
+
+  pb-32{
+    padding-bottom:32px
+  }
+  .job-content {
+    .info {
+      display: flex;
+      flex-wrap: wrap;
+
+      .city-company {
+        flex: 1;
+        text-align: left;
+      }
+      .under-txt {
+        font-weight: bold;
+        float: left;
+      }
+      .price-deadline {
+        text-align: right;
+        width: 141px;
+      }
+      margin-top: 53px;
+      span{
+        display: block;
+      }
+    }
+
+    hr {
+      border-top: 1px solid #b5b5b5;
+    }
+
+    .content {
+      p {
+        margin-top: 20px;
+        font-weight: bold;
+      }
+
+      span {
+        white-space: pre-line;
+      }
+    }
+
+    .apply-btn {
+      background-color: #631a90;
+      color: white;
+    }
+
+    .tags-wrapper {
+      height: 40px;
+
+      .tag {
+        padding: 10px 20px;
+        color: white;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 20px;
+        margin-left: 5px;
+        background-color: #bc43ff;
+        border-radius: 20px;
+
+        &:first-child {
+          margin-left: 0px;
+        }
+      }
+    }
+
+  }
+  @media (max-width: 991px) {
+    .container {
+        margin-top: 10px;
+    }
+  }
+}
+

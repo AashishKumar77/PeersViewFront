@@ -1,0 +1,133 @@
+.compose-job-component {
+  padding-top: 80px;
+
+  .title {
+    // padding: 5px;
+    // border-bottom: 1px solid;
+
+    h1 {
+      font-size: 26px;
+      color: #320f49;
+      margin-top: 30px;
+      margin-bottom: 20px;
+    }
+  }
+
+  .mat-form-field {
+    display: block;
+  }
+
+  .price-wrapper {
+    display: flex;
+
+    select {
+      width: 60px;
+    }
+  }
+
+  .form-content {
+    .right-fields {
+      padding-left: 10px;
+    }
+
+    .left-fields {
+      padding-right: 10px;
+    }
+
+    .form-control {
+      border: 1px solid #320f49;
+      border-radius: 4px;
+    }
+
+    .form-group {
+      margin-bottom: 25px;
+      position: relative;
+
+      &.salary {
+        input {
+          border-top-right-radius: 0px;
+          border-bottom-right-radius: 0px;
+        }
+
+        select {
+          border-top-left-radius: 0px;
+          border-bottom-left-radius: 0px;
+          border-left: none;
+        }
+      }
+
+      textarea {
+        width: 100%;
+        height: 125px;
+        resize: none;
+      }
+
+      .text-limit {
+        position: absolute;
+        bottom: 2px;
+        right: 5px;
+      }
+    }
+
+    .validation-error {
+      color: red;
+      position: absolute;
+      padding: 0px;
+    }
+
+    // material datepicker customize
+    .mat-form-field-flex {
+      border: 1px solid #320f49;
+      border-radius: 4px;
+      background-color: white;
+    }
+    .mat-form-field-appearance-legacy .mat-form-field-wrapper {
+      padding-bottom: 0px;
+    }
+    .mat-form-field-appearance-legacy .mat-form-field-infix {
+      border: none;
+      padding: 10px;
+    }
+
+    .mat-form-field-suffix {
+      margin-right: 8px;
+    }
+
+    .mat-form-field-appearance-legacy .mat-form-field-underline {
+      display: none;
+    }
+
+    .mat-form-field-label-wrapper {
+      top: 0px;
+      padding: 0px;
+    }
+
+    .mat-form-field-label {
+      top: 0px;
+      transition: none;
+      margin: 0px;
+      padding: 10px;
+      // display: none;
+    }
+    // material datepicker customize
+  }
+
+  .button-wrapper {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+
+    button {
+      background-color: #320f49;
+      border-radius: 5px;
+      padding: 10px 30px;
+    }
+  }
+  @media (max-width: 991px) {
+    .title {
+      margin-top: 53px;
+      padding: 5px;
+      border-bottom: 1px solid;
+    }
+  }
+}

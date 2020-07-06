@@ -1,0 +1,207 @@
+.sign-up-component {
+  height: 100%;
+ // background: url(https://res.cloudinary.com/peersview-com/image/upload/v1518100226/pageBg.jpg) no-repeat;
+ // background-size: cover;
+  .form-control {
+    min-height: 38px;
+    border-radius: 2px;
+    color: #8d36c3;
+    border-color:#320f49;
+    &::placeholder {
+      color: #8d36c3;
+    }
+    &:focus {
+      border-color: unset;
+      box-shadow: none;
+    }
+  }
+  .btn {
+    min-height: 38px;
+    font-size: 16px;
+    border-radius: 2px;
+  }
+  .signUp-title{
+    padding: 2rem;
+  }
+  .sign-up-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 80%;
+    height: 90%;
+    transform: translate(-50%, -50%);
+    img{
+    height: 4rem;
+    width: 13rem;
+    }
+
+    .sign-up-container{
+      display: flex;
+      justify-content: center;
+
+      .first-section{
+        padding: 2%;
+        width: 100%;
+      }
+      span{
+        color: #8d36c3;
+        font-size: 1.8rem;
+      }
+      .d-block{
+        font-size: 1.8rem;
+      }
+      .second-section{
+        padding: 2%;
+        width: 100%;
+      }
+    }
+
+    .footer-buttons{
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem;
+    }
+
+    .signUp-btn{
+      width: 20rem;
+    }
+
+    form {
+      padding: 8px 25px 8px ;
+      background: #ffffff;
+     // box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 0 6px 1px #e0dddd;
+      border-radius: 2rem;
+
+      .alert-danger {
+        background-color: transparent;
+        border-color: transparent;
+        color: red;
+        padding: 0px;
+    }
+      h2 {
+        margin: 0 0 15px;
+      }
+      .signup-label {
+        padding: 0;
+      }
+      .sign-up-input {
+        padding: 0;
+        margin-bottom: 3px;
+      }
+      .social-btn {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        padding: 2rem;
+        .facebook {
+          background:  #ffffff;
+          border-color: #320f49;
+          color: #320f49;
+          margin: 0.5rem;
+          width: 15rem;
+        }
+        .linkedIn {
+          background:  #ffffff;
+          border-color: #320f49;
+          color: #ffffff;
+          margin: 0.5rem;
+          width: 15rem;
+        }
+        .google {
+          background-color: #ffffff;
+          border-color: #320f49;
+          color: #320f49;
+          margin: 0.5rem;
+          width: 15rem;
+        }
+      }
+      .form-group {
+        margin-bottom: 0;
+      }
+    }
+    .hint-text {
+      padding-bottom: 15px;
+      font-size: 15px;
+  		text-align: center;
+    }
+    .sign-up-now {
+      font-size: 16px;
+      cursor: pointer;
+      color:#320f49;
+    }
+    .sign-in {
+      background-color: #8d36c3;
+      font-size: 15px;
+      font-weight: 800;
+      color: #ffffff;
+    }
+    .or-seperator {
+      margin: 20px 0 0;
+      text-align: center;
+      border-top: 1px solid #ccc;
+      i {
+        position: relative;
+        top: -11px;
+        padding: 0 10px;
+        background: #f7f7f7;
+        z-index: 1;
+      }
+    }
+	}
+
+
+    // Custom, iPhone Retina
+    @media only screen and (max-width : 320px) {
+      .sign-up-form {
+
+        .sign-up-container{
+          display: flex;
+          flex-wrap: wrap;
+          .first-section{
+           order: 2;
+          }
+        }
+      }
+    }
+
+    @media only screen and (max-width : 480px) {
+      .sign-up-form {
+        .sign-up-container{
+          display: flex;
+          flex-wrap: wrap;
+          .first-section{
+            order: 2;
+           }
+        }
+      }
+    }
+    // extra Small Devices, Phones
+    @media only screen and (min-width : 480px) {
+      .sign-up-form {    
+        form {
+          padding: 8px;
+          .sign-up-input {
+            margin-bottom: 8px;
+          }
+          .signup-label {
+            padding: 2rem 0;
+          }
+        }
+      }
+    }
+    // Small Devices, Tablets
+    @media only screen and (min-width : 768px) {
+      .sign-up-form {
+        form {
+          padding: 10px;
+        }
+      }
+    }
+    // Medium Devices, Desktops
+    @media only screen and (min-width : 992px) {}
+    // Large Devices, Wide Screens
+    @media only screen and (min-width : 1200px) {}
+}

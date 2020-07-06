@@ -1,0 +1,34 @@
+<div class="company-filter-modal">
+  <h4 class="modal-heading">Search with Filters</h4>
+  <div class="modal-body ng-scope">
+    <h4>Company Name</h4>
+    <div>
+      <input class="form-control" placeholder="e.g.facebook" [(ngModel)]="form.companyName" required/>
+    </div>
+    <h4>Industry</h4>
+    <div class="filter-content">
+      <span class="filter-item m-peersview-xr-1" [ngClass]="{active: (selectedIndustries.indexOf(industry) > -1)}" (click)="selectIndustry(industry)" *ngFor="let industry of industries">{{industry.name}}</span>
+    </div>
+    <h4>Country</h4>
+    <div>
+      <select class="form-control" name="country" [(ngModel)]="form.country" [ngModelOptions]="{standalone: true}" #country="ngModel" required>
+        <option selected="selected" disabled>e.g Canada</option>
+        <option *ngFor="let country of countries" value={{country.name}}>{{country.name}}</option>
+      </select>
+    </div>
+    <h4>City</h4>
+    <div>
+      <input class="form-control" placeholder="e.g.Toronto" [(ngModel)]="form.city" required/>
+    </div>    
+    <div class="m-peersview-yt-2">
+      <div class="checkbox-item">
+        <input type="checkbox" [(ngModel)]="form.hiringCompanies">
+        <span>Only hiring companies</span>
+      </div>
+    </div>
+    </div>
+  <div class="modal-footer text-center">
+    <button type="button" class="btn-cancel" (click)="onCancel()">Cancel</button>
+    <button type="button" class="btn-apply-filters" (click)="onSave()">Apply Filters</button>
+  </div>
+</div>

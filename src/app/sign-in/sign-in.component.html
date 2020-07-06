@@ -1,0 +1,72 @@
+<div class="sign-in-component">
+  <div class="sign-in-form">
+    <div class="form-wrapper">
+      <form #signInForm="ngForm" (ngSubmit)="onSignIn(signInForm.valid)">
+        <h2 class="m-peersview-yb-1">
+          <div>
+            <cl-image class="mouse-pointer" public-id="peersviewLogo" [routerLink]="['/']" height="30px">
+            </cl-image>
+          </div>
+          <div class="signin-label m-peersview-yt-3 m-peersview-yb-0">Sign In</div>
+        </h2>
+        <p class="m-peersview-yb-2">Login with my peersview account</p>
+
+        <div class="form-group">
+          <div class="input-group">
+            <!-- <span class="input-group-addon color-light-purple"><i class="material-icons">email</i></span> -->
+            <label class="d-block">Email</label>
+            <input type="text" class="form-control" name="email" placeholder="Email" autocomplete="email"
+              required="required" [(ngModel)]="user.email" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="input-group">
+            <!-- <span class="input-group-addon color-light-purple"><i class="material-icons">lock</i></span> -->
+            <label class="d-block">Password</label>
+            <input type="password" class="form-control" name="password" placeholder="Password" autocomplete="password"
+              required="required" [(ngModel)]="user.password">
+          </div>
+        </div>
+        <div class="clearfix">
+          <label class="pull-left checkbox-inline peersview-primary-color-light"><input type="checkbox"> Remember me</label>
+          <a class="pull-right peersview-primary-color-light" [routerLink]="['/forgot-password']">Forgot Password?</a>
+        </div>
+        <div class="form-group m-peersview-yt-2">
+          <button type="submit" class="btn-peersview-primary btn-block btn-peersview-md">Login</button>
+        </div>
+      </form>
+      <div class="or-seperator"><i>or</i></div>
+      <div class="social-btn">
+        <a class="btn facebook mouse-pointer" (click)="onSignInViaSocial('facebook')">
+          <i class="fa fa-facebook"></i>
+          <b>Facebook</b>
+        </a>
+        <!-- <a
+              class="btn btn-block linkedIn mouse-pointer"
+              (click)="onSignInViaSocial('linkedin')">
+              <i class="fa fa-twitter"></i>
+              Sign in with
+              <b>LinkedIn</b>
+            </a> -->
+        <a class="btn google mouse-pointer" (click)="onSignInViaSocial('google')">
+          <i class="fa fa-google"></i>
+          <b>Google</b>
+        </a>
+      </div>
+      <div class="hint-text m-peersview-yt-3">Don't have an account?
+        <a class="sign-up-now peersview-primary-color" [routerLink]="['/sign-up']">Sign-up here</a>
+      </div>
+    </div>
+    <div class="career-center-section">
+      <h2>Career Center</h2>
+      <p>If your institution uses the Career Center, Log In with your institutions Single Sign on.</p>
+      <label class="m-peersview-yt-3">Your Institution</label>
+      <select [(ngModel)]="institution">
+        <option disabled selected>Select your institution</option>
+        <option>Peersview</option>
+        <option>Google</option>
+      </select>
+      <button class="m-peersview-yt-3">Continue</button>
+    </div>
+  </div>
+</div>

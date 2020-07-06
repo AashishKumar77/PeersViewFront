@@ -1,0 +1,32 @@
+<div class="blog-home-component">
+  <div class="blog-home-top-component">
+    <div class="container">
+      <shared-navbar-unauth-component
+        [logo] = true
+        [aboutUsSecond]=true
+        [employersSecond]=true
+        [signIn]=true>
+      </shared-navbar-unauth-component>
+      <div class="clear"></div>
+      <div class="banner-title text-center">
+        <div class="tagline">
+          <h1>Peersview Blog</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+      <div class="blog-list-wrapper">
+        <div class="title">
+          <h1 class="">Latest Activities</h1>
+        </div>
+        <div class="blog-list">
+          <shared-blog-component [items]="blogs" 
+            [route]="{
+              'name': 'blog'
+            }">
+          </shared-blog-component>
+        </div>
+      </div>
+  </div>
+</div>

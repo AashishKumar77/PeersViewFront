@@ -1,0 +1,94 @@
+.review-resume-component {
+  padding-top: 50px;
+
+  .router-items {
+    margin-top: 20px;
+
+    a {
+      display: inline-block;
+      width: 200px;
+      border: 1px solid #631a90;
+      color: #631a90;
+      padding: 10px 15px;
+      text-align: center;
+    }
+
+    a:first-child {
+      border-right: none;
+    }
+
+    a.active {
+      background-color: #631a90;
+      color: white;
+    }
+  }
+
+  .back-btn {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+  }
+
+  .review-resume-content {
+    
+    .text-bold {
+      font-family: Conv_MavenPro-Bold;
+    }
+    
+    .info {
+      display: flex;
+      flex-wrap: wrap;
+
+      .city-company {
+        flex: 1;
+        text-align: left;
+      }
+      .under-txt {
+        font-weight: bold;
+        float: left;
+      }
+      .price-deadline {
+        text-align: right;
+        width: 141px;
+      }
+      margin-top: 53px;
+      span{
+        display: block;
+      }
+    }
+
+    hr {
+      border-top: 1px solid #b5b5b5;
+    }
+
+    .content {
+      p {
+        margin-top: 20px;
+        font-weight: bold;
+      }
+
+      span {
+        white-space: pre-line;
+      }
+    }
+
+    .apply-btn {
+      background-color: #631a90;
+      color: white;
+    }
+  }
+  @media (max-width: 991px) {
+    .router-items {
+      margin-top: 84px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .router-items {
+      a {
+        width: inherit;
+      }
+    }
+  }
+}
+

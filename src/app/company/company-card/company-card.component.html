@@ -1,0 +1,37 @@
+<div class="company-card">
+  <div class="header">
+    <div class="logo">
+      <cl-image class="company-image"
+        public-id="{{company.logo ? company.logo : 'avatar'}}">
+        <cl-transformation width="50" height="50" gravity="custom">
+        </cl-transformation>
+      </cl-image>
+      <!-- <img src="/src/assets/images/company_logo.svg" alt="LOGO"/> -->
+    </div>
+    <div class="company">
+      <span class="name" [innerHtml]="company.company"></span>
+    </div>
+  </div>
+  <div>
+    <!-- <p class="title" [innerHtml]="company.company_bio"></p> -->
+  </div>
+  <div class="info-wrapper d_flex m-peersview-yt-2" style="margin-bottom:10px;">
+    <div class="flex_1">
+      <img class="icon m-peersview-xr-1" src="https://res.cloudinary.com/peersview-com/image/upload/v1585225325/map-pin-5-line_chaco6.svg" alt="icon" />
+      <span class="name" [innerHtml]="country"></span>
+    </div>
+    <div class="flex_1">
+      <img class="icon m-peersview-xr-1" src="https://res.cloudinary.com/peersview-com/image/upload/v1585225285/job_status_component_jub2oq.png" alt="icon" />
+      <span class="name" [innerHtml]="company.company_contact"></span>
+    </div>
+
+  </div>
+  <div class="clearfix"></div>
+  <div class="tags-wrapper  text-center flex_wrap m-peersview-y-2">
+    <div class="clearfix"></div>
+    <span class="tag">{{ company.industry }}</span>
+  </div>
+  <div class="text-center actions">
+    <a class="d_block m-peersview-y-2" (click)="showCompanyDetail(company)">View Profile</a>
+  </div>
+</div>

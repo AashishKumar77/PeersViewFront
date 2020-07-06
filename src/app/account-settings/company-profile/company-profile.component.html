@@ -1,0 +1,31 @@
+<div class="company-profile-component">
+  <div class="tab-title">company-profile</div>
+
+  <div class="row p-peersview-y-1 billing-row  m-peersview-0">
+    <div class="col-sm-4 account-settings-billing-add-billing-button text-right" *ngIf="isAdmin">
+      <button class="btn-peersview-primary btn-lg hidden-xs"
+       (click)="onComposeCompany()">Add Company</button>
+    </div>
+  </div>
+
+  <div class="container">
+    <table class="table table-striped">
+      <thead>
+          <tr>
+            <th>Company</th>
+            <th>Action</th>
+          </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let company of companies">
+          <td>{{ company.company }}</td>
+          <td> 
+           <button id="view" (click)="showCompanyDetail(company)">View</button>
+           <button id="edit" (click)="editCompany(company)">Edit</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+</div>

@@ -1,0 +1,100 @@
+.job-status-item {
+    display: flex;
+    padding: 20px;
+    box-shadow: 0px 5px 20px #53d7690c;
+
+    .mb-25 {
+        margin-bottom: 25px;
+    }
+    .title {
+        font: bold 20px/24px "Maven Pro", sans-serif;
+        color: #1e1e22;
+        margin-bottom: 15px;
+    }
+
+    .value {
+        font: 400 16px/21px "Maven Pro", sans-serif;
+        color: #1e1e22;
+
+        &.jobfunction {
+            white-space: pre-wrap;
+        }
+    }
+
+    .text-ellipsis {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        width: 100%;
+        display: block;
+        padding-right: 10px;
+    }
+
+    .change-status {
+        width: 200px;
+        height: 50px;
+        background: transparent;
+        border-radius: 5px;
+        border: 1px solid #340e49;
+        /* padding: 16px 11px; */
+        padding-left: 10px;
+        font: 600 16px/19px "Maven Pro", sans-serif;
+        color: #340e49;
+    }
+
+    .status-button {
+        width: 200px;
+        height: 50px;
+        background: #340e49;
+        font: 600 16px/19px "Maven Pro", sans-serif;
+        color: white;
+        outline: none;
+        border: none;
+        border-radius: 5px;
+    }
+
+    .delete-button {
+        width: 200px;
+        height: 50px;
+        background: transparent;
+        font: 600 16px/19px "Maven Pro", sans-serif;
+        color: red;
+        outline: none;
+        border: none;
+        border-radius: 5px;
+        border: 1px solid red;
+    }
+
+    .job-link {
+        display: block;
+        text-align: center;
+    }
+
+    .column1 {
+        flex: 0 0 300px;
+        width: 300px;
+    }
+    .column2 {
+        flex: 1;
+    }
+    .column3 {
+        flex: 0 0 200px;
+        width: 200px;
+    }
+
+    @media (max-width: 992px) {
+        display: block;
+        .column1 {
+            margin-bottom: 25px;
+            width: auto;
+        }
+        .column2 {
+            margin-bottom: 25px;
+        }
+        .column3 {
+            text-align: center;
+            margin: auto;
+        }
+    }
+    
+}

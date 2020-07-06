@@ -1,0 +1,57 @@
+<div class="shared-scholarship-component">
+  <h2 class="no-post-yet text-center" *ngIf="items.length === 0">
+    {{notJobMessage}}
+  </h2>
+
+  <div class="scholarship-item" *ngFor="let item of items">
+    <div class="scholarship-title-wrapper">
+      <h3 class="scholarship-title" (click)="showScholarshipDetail(item)">{{item.title}}</h3>
+      <!-- <a data-toggle="tooltip" title="Report this scholarship">
+        <i class="material-icons">flag</i>
+      </a> -->
+    </div>
+    <div class="scholarship-item-content">
+      <div class="status-section">
+        <div class="status-wrapper">
+          <p class="status-item">
+            <i class="material-icons">web</i>
+            <span>{{scholarshipTypes[item.type]}}</span>
+          </p>
+        </div>
+        <div class="status-wrapper">
+          <p class="status-item">
+            <i class="material-icons">local_atm</i>
+            <span>{{item.currency + ' ' + item.price}}</span>
+          </p>
+        </div>
+        <div class="status-wrapper">
+          <p class="status-item">
+            <i class="material-icons">event_available</i>
+            <span>{{item.deadline | localDate}}</span>
+          </p>
+        </div>
+      </div>
+      
+      <!-- <div class="price-deadline">
+        <p class="status-item deadline">
+          <b>Apply by:</b> {{item.deadline | localDate}}
+        </p>
+        <p class="status-item">
+        </p>
+      </div> -->
+      <p class="html-content-wrapper" [innerHtml]="trimStory(item.details, 500)" class="scholarship-description">
+      </p>
+    </div>
+    <div class="actions-wrapper">
+      <a class="view-scholarship-btn" (click)="showScholarshipDetail(item)">View Scholarship</a>
+      <!-- <a *ngIf="item.userId==currentUser.id" class="view-scholarship-btn" (click)="onEditScholarship(item.id)" style="margin-left: 10px;background-color: brown;">Edit Scholarship</a> -->
+      <!-- <a *ngIf="item.userId==currentUser.id" class="view-scholarship-btn" (click)="onDeleteScholarship(item.id)" style="margin-left: 10px;background-color: #8e8b8b;">Delete Scholarship</a> -->
+    </div>
+  </div>
+  <div class="load-more" *ngIf="items.length >= limit">
+    <button type="button" class="btn-peersview-secondary btn-block btn-peersview-md" (click)="onLoadMoreScholarship()"
+      [disabled]="isLoadingMoreScholarships">
+      {{btnLoadMoreText}}
+    </button>
+  </div>
+</div>

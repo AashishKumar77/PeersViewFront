@@ -1,0 +1,78 @@
+<div class="employability-assessment-component">
+  <div
+        class="back-cover align-items-center">
+        <div>
+          <a class="back-btn" [routerLink]="['/job/career-resources/finance']">
+            <i class="material-icons">arrow_back</i>
+            Finance
+        </a>
+        </div>
+
+        <div
+            class="slogan-background">
+            <div class="slogan">
+                Employability Assessment
+            </div>
+        </div>
+    </div>
+
+
+  <div>
+
+      <div id="tabs" class="container" #tabs>
+
+        <ul class="tab-menu">
+          <li  role="presentation">
+            <a
+            [ngClass]="{ 'active':activeTab==='tab1'}"
+            (click)="result('tab1')"
+            data-toggle="tab">Familiarity</a>
+          </li>
+          <li class="nav-item" role="presentation">
+            <a class="nav-link"
+            [ngClass]="{ 'active':activeTab==='tab2'}"
+            data-toggle="tab"
+            (click)="result('tab2')">Tools & Technology</a>
+          </li>
+          <li class="nav-item" role="presentation">
+            <a class="nav-link"
+            [ngClass]="{ 'active':activeTab==='tab3'}"
+            data-toggle="tab"
+               (click)="result('tab3')">Certifications</a>
+          </li>
+          <li class="nav-item" role="presentation">
+            <a class="nav-link"
+            [ngClass]="{ 'active':activeTab==='tab4'}"
+            data-toggle="tab"
+               (click)="result('tab4')">Work Experience</a>
+          </li>
+          <li class="nav-item" role="presentation">
+            <a class="nav-link"
+            [ngClass]="{ 'active':activeTab==='tab5'}"
+            data-toggle="tab"
+               (click)="result('tab5')">Working Condition</a>
+          </li>
+        </ul>
+
+        <div class="tab-content">
+          <div class="tab-pane" id="tab1" [ngClass]="{ 'active':activeTab==='tab1'}">
+            <tab-1-component></tab-1-component>
+          </div>
+          <div class="tab-pane" id="tab2" [ngClass]="{ 'active':activeTab==='tab2'}">
+            <tab-2-component></tab-2-component>
+          </div>
+          <div class="tab-pane" id="tab3" [ngClass]="{ 'active':activeTab==='tab3'}">
+            <tab-3-component></tab-3-component>
+          </div>
+          <div class="tab-pane" id="tab4" [ngClass]="{ 'active':activeTab==='tab4'}">
+            <tab-4-component></tab-4-component>
+          </div>
+          <div class="tab-pane" id="tab5" [ngClass]="{ 'active':activeTab==='tab5'}">
+            <tab-5-component></tab-5-component>
+          </div>
+        </div>
+
+      </div>
+      </div>
+
+</div>

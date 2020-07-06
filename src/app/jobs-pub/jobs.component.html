@@ -1,0 +1,33 @@
+<div class="jobs-pub-component">
+  <div class="container" id="jobs-pub-component">
+    <shared-navbar-unauth-component
+      [peersviewLogo]=true
+      [logo] = true
+      [isLogoBlue]=true
+      [companies]=true
+      [employers]= true
+      [signIn]=true
+      [signUp]=true>
+    </shared-navbar-unauth-component>
+    <div class="content">
+      <div class="title-section d_flex flex_wrap">
+        <h1 class="title">Jobs you're looking for</h1>
+        <div class="d_flex">
+          <div class="input-wrapper">
+            <input class="search-box" placeholder="Search Jobs"/>
+            <img src="https://res.cloudinary.com/peersview-com/image/upload/v1585225195/filter_component_rwqzp3.png" class="filter-icon" (click)="openFilterModal()"/>
+          </div>
+          <button class="btn-peersview-primary btn-lg desktop" (click)="onSearchJob()">Search</button>
+          <button class="btn-peersview-primary btn-lg mobile" (click)="onSearchJob()">
+            <i class="material-icons">search</i>
+          </button>
+        </div>
+      </div>
+      <div class="jobs-wrapper m-peersview-yt-3 d_flex flex_wrap">
+        <div class="job-item" *ngFor="let job of jobs">
+          <shared-job-card-component [job]="job"></shared-job-card-component>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
