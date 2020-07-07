@@ -55,6 +55,7 @@ export class JobCareerEvaluationComponent {
     Object.keys(this.evaluationResult).map(key => {
       if (this.evaluationResult[key].length == max) {
         res.push(key);
+      
       }
     })
 
@@ -64,6 +65,7 @@ export class JobCareerEvaluationComponent {
           key: item,
           value: this.resultData[item]
         })
+  
       });
     } else if (res.length == 2) {
       let key = `${res[0]}&${res[1]}`;
@@ -91,6 +93,7 @@ export class JobCareerEvaluationComponent {
         value: this.resultData[res[0]]
       })
     }
+    console.log('calcEvaluation', this.evaluationResultArray)
   }
 
   public ngOnDestroy (): void {}

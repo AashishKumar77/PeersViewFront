@@ -52,13 +52,30 @@
         <div>
             <button class="btn-peersview-primary btn-peersview-md calc-btn" (click)="calcEvaluation()">Find Your Match</button>
         </div>
-        <div class="calc-result">
-            <div *ngFor="let item of evaluationResultArray" class="result-item">
-                <span class="key">{{item.key}}</span>
-                <div>
+        <div class="calc-result careerevaluation-result-section">
+           <div class="result-container" *ngFor="let item of evaluationResultArray">
+               <h2>{{item.key}}</h2>
+            <div  class="result-item" *ngFor="let item1 of item.value">
+
+                <!-- <span class="key">{{item.key}}</span> 
+               <div>
                     <span *ngFor="let item1 of item.value" class="item">{{item1}}</span>
+                </div>   -->
+
+                <div class="card" >
+                     <!-- <img [src]="resource.image"/>  -->
+                     <img src="https://res.cloudinary.com/peersview-com/image/upload/v1587048186/Group_87_gkhepx.png" alt="">
+                     <div class="resourcecontent">
+                   <div class="resource-inr-part">
+                    <h5>{{item1}}</h5>
+                    <span class="withemplise">With emphasis on</span>
+                    <p>Project Management   Project Management...</p>
+                   </div>
+                     <a href="javascript:;" [routerLink]="['/job/career-evaluation', item1]">View Details <i class="fa fa-long-arrow-right"></i></a>
+                   </div>
                 </div>
             </div>
+           </div>
         </div>
         <div class="result-section" style="display: none;">
             <div class="description">

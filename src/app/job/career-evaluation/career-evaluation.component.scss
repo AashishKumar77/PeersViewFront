@@ -95,8 +95,7 @@
     .calc-result {
       margin-bottom: 30px;
 
-      .result-item {
-        margin-bottom: 10px;
+      .result-item { 
         display: flex;
       }
       .key {
@@ -161,4 +160,77 @@
 
   }
 }
+.result-container h2 {
+  width: 100%;
+  padding: 10px;
+  /* border-bottom: 1px solid #ccc; */
+  margin-top: 0px;
+  padding-top: 0px;
+  background: #f5f5f5;
+}
+.careerevaluation-result-section .result-container {
+  margin-left: -10px;
+  margin-right: -10px;
+  display: flex;
+  padding-top: 20px;
+  flex-wrap: wrap;
+}
+.careerevaluation-result-section .result-container .result-item {
+  flex: 0 1 25%;
+  padding: 10px;
+}
+.careerevaluation-result-section  .result-item .card {
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  border-radius: 10px 10px 5px 5px;
+  overflow: hidden;
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+  box-shadow: 0px 2px 8px #ccc;
+  min-height: 300px;
+}
 
+.careerevaluation-result-section  .result-item  img {
+  width: 100%;
+}
+
+.careerevaluation-result-section .resourcecontent {
+  position: relative;
+  /* top: 40px; */
+  background: #fff;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  margin-top: -60px;
+}
+.careerevaluation-result-section .resource-inr-part {
+  padding: 10px;
+  min-height: 180px;
+}
+.careerevaluation-result-section .result-container .result-item .card h5 {
+  font-size: 20px;
+  font-weight: 500;
+  color: #340e49;
+}
+.careerevaluation-result-section .result-container .result-item .card .withemplise {
+  font-size: 14px;
+  color: #333;
+  display: block;
+  margin-bottom: 10px;
+}
+.careerevaluation-result-section .result-container .result-item .card p {
+  font-size: 17px;
+  font-weight: normal;
+  color: #333;
+}
+.careerevaluation-result-section .resourcecontent a {
+  color: #340e49;
+  padding-top: 10px;
+  font-size: 16px;
+  text-align: center;
+  display: block;
+  border-top: 2px solid #ddd;
+}

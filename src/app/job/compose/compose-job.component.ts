@@ -17,6 +17,7 @@ import { JobFactory } from '../../shared/models/factory';
 })
 export class ComposeJobComponent {
   skillArray = [];
+  showSkill:boolean=false;
   constructor (
     private jobApiService: JobApiService,
     private industryApiService: IndustryApiService,

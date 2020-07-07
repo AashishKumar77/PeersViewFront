@@ -3,7 +3,12 @@
     height: 100vh;
     margin-top: 8rem; 
     border-right: 1px solid #e4e3e3; 
-
+    .search-input-part input.form-control {
+      max-width: 99%;
+      border-radius: 5px;
+      min-height: 30px;
+      box-shadow: none;
+  }
     .title {
       margin: 0 3px;
       h5,
@@ -12,7 +17,7 @@
       }
 
       h5 {
-        font-weight: 500;
+        font-weight: 500;font-size:18px;
       }
 
       .new-message-btn {

@@ -46,6 +46,9 @@ const jobRoutes: Routes = [{
     }, {
         path: 'career-evaluation',
         component: JobCareerEvaluationComponent
+    },{
+        path: 'career-evaluation/:id',
+        component: JobCareerResourcesCourseComponent
     }, {
         path: 'market-outlook',
         component: MarketOutlookComponent

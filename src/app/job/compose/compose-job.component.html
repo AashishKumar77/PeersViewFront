@@ -78,15 +78,7 @@
             </div>
           </div>
 
-          <div class="form-group">
-            <label>Source Link:</label>
-            <input type="text" formControlName="source_link" class="form-control">
-            <div *ngIf="f.source_link.touched && f.source_link.errors" class="validation-error">
-              <div *ngIf="f.source_link.errors.required">
-                Source link is required.
-              </div>
-            </div>
-          </div>
+        
           <div class="form-group">
             <label>Country:</label>
             <select class="form-control" formControlName="country" name="country">
@@ -123,6 +115,78 @@
         </div>
 
         <div class="right-fields flex_1">
+          <div class="form-group relative-part">
+            <label>Add the core Skills:</label> 
+          
+            <input type="text" class="form-control" (click)="showSkill=!showSkill" placeholder="Select the skills">
+             
+            <div class="skilllisting-part" *ngIf="showSkill">
+              <ul class="skill-listing"> 
+                <li>
+                      <label><input type="checkbox" class="skillcheckbox"><span class="skillname">W-CDMA(UMTS)</span></label>
+                </li>
+                <li>
+                  <label><input type="checkbox" class="skillcheckbox"><span class="skillname">Slope Stablility Analysis</span></label>
+            </li>
+            <li>
+              <label><input type="checkbox" class="skillcheckbox"><span class="skillname">W3C Markup Validation Service</span></label>
+              </li>
+              <li>
+                    <label><input type="checkbox" class="skillcheckbox"><span class="skillname">Windshield Wipers</span></label>
+              </li>
+              <li>
+                <label><input type="checkbox" class="skillcheckbox"><span class="skillname">Wire Wrap </span></label>
+            </li>
+            <li>
+              <label><input type="checkbox" class="skillcheckbox"><span class="skillname">Weather Warning</span></label>
+            </li>
+            <li>
+              <label><input type="checkbox" class="skillcheckbox"><span class="skillname">Wireless WAN</span></label>
+            </li>
+            <li>
+              <label><input type="checkbox" class="skillcheckbox"><span class="skillname">Workplace Wellness</span></label>
+            </li>
+            <li>
+              <label><input type="checkbox" class="skillcheckbox"><span class="skillname">Website Wireframe</span></label>
+            </li>
+            <li>
+              <label><input type="checkbox" class="skillcheckbox"><span class="skillname">Water Wells</span></label>
+            </li>
+            <li>
+              <label><input type="checkbox" class="skillcheckbox"><span class="skillname">Window Workflow Foundation</span></label>
+            </li>
+            <li>
+              <label><input type="checkbox" class="skillcheckbox"><span class="skillname">WebHost Manager(WHM)</span></label>
+            </li>
+            <li>
+              <label><input type="checkbox" class="skillcheckbox"><span class="skillname">Continous Wave/Waveform</span></label>
+            </li>
+            <li>
+              <label><input type="checkbox" class="skillcheckbox"><span class="skillname">Wireless Application Protoco..</span></label>
+            </li>
+            <li>
+              <label><input type="checkbox" class="skillcheckbox"><span class="skillname">Web Application Description...</span></label>
+            </li>
+            </ul> 
+            <button type="button" class="arowbtn" (click)="showSkill=false"> < </button>
+            <button type="button" class="arowbtn btnactive" (click)="showSkill=false"> > </button>
+            </div>
+            <div *ngIf="f.industryId.touched && f.industryId.errors" class="validation-error">
+              <div *ngIf="f.industryId.errors.required">
+                Skill is required.
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Paste the jobs description here:</label>
+            <textarea type="text" formControlName="company_bio" class="form-control"></textarea>
+            <span class="text-limit">{{form.company_bio ? form.company_bio.length : 0}}/512</span>
+            <div *ngIf="f.company_bio.touched && f.company_bio.errors" class="validation-error">
+              <div *ngIf="f.company_bio.errors.required">
+                Job description is required.
+              </div>
+            </div>
+          </div>
           <div class="form-group">
             <label>Industry:</label>
             <!-- <div class="form-control industry">
@@ -138,16 +202,33 @@
               </div>
             </div>
           </div>
-          <div class="form-group">
-            <label>Brief Company Bio:</label>
-            <textarea type="text" formControlName="company_bio" class="form-control"></textarea>
-            <span class="text-limit">{{form.company_bio ? form.company_bio.length : 0}}/512</span>
-            <div *ngIf="f.company_bio.touched && f.company_bio.errors" class="validation-error">
-              <div *ngIf="f.company_bio.errors.required">
-                Brief Company Bio is required.
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label>Brief Company Bio:</label>
+                <textarea type="text" formControlName="company_bio" class="form-control"></textarea>
+                <span class="text-limit">{{form.company_bio ? form.company_bio.length : 0}}/512</span>
+                <div *ngIf="f.company_bio.touched && f.company_bio.errors" class="validation-error">
+                  <div *ngIf="f.company_bio.errors.required">
+                    Brief Company Bio is required.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label>Job Function:</label>
+                <textarea type="text" formControlName="jobfunction" class="form-control"></textarea>
+                <span class="text-limit">{{form.jobfunction ? form.jobfunction.length : 0}}/512</span>
+                <div *ngIf="f.jobfunction.touched && f.jobfunction.errors" class="validation-error">
+                  <div *ngIf="f.jobfunction.errors.required">
+                    Job function is required.
+                  </div>
+                </div>
               </div>
             </div>
           </div>
+         
 
           <!-- <div class="form-group">
               <label>Experience:</label>
@@ -158,33 +239,50 @@
                 </div>
               </div>
             </div> -->
-          <div class="form-group">
-            <label>Job Function:</label>
-            <textarea type="text" formControlName="jobfunction" class="form-control"></textarea>
-            <span class="text-limit">{{form.jobfunction ? form.jobfunction.length : 0}}/512</span>
-            <div *ngIf="f.jobfunction.touched && f.jobfunction.errors" class="validation-error">
-              <div *ngIf="f.jobfunction.errors.required">
-                Job function is required.
+         <div class="row">
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label>Company Logo:</label>
+              <shared-upload-image-component
+                [uploadOptions]="{'queueLimit': 1, 'event': 'changeCompanyLogoPic'}"
+                (uploadComplete)="onUploadComplete($event)"
+                (imageIsSelected)="onImageSelected($event)"
+              ></shared-upload-image-component>
+              <div *ngIf="!imageSelected && isSubmitted" class="validation-error">
+                <div>
+                  Company logo is required.
+                </div>
               </div>
             </div>
           </div>
-          <div class="form-group">
-            <label>Company Logo:</label>
-            <shared-upload-image-component
-              [uploadOptions]="{'queueLimit': 1, 'event': 'changeCompanyLogoPic'}"
-              (uploadComplete)="onUploadComplete($event)"
-              (imageIsSelected)="onImageSelected($event)"
-            ></shared-upload-image-component>
-            <div *ngIf="!imageSelected && isSubmitted" class="validation-error">
-              <div>
-                Company logo is required.
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label>URL for job Postings:</label>
+              <input type="text" formControlName="source_link" class="form-control">
+              <div *ngIf="f.source_link.touched && f.source_link.errors" class="validation-error">
+                <div *ngIf="f.source_link.errors.required">
+                  URL is required.
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>If the Job has not been posted on an external site, please enter the email address you want applications sent to:</label>
+              <input type="text" formControlName="source_link" class="form-control">
+              <div *ngIf="f.source_link.touched && f.source_link.errors" class="validation-error">
+                <div *ngIf="f.source_link.errors.required">
+                  URL is required.
+                </div>
               </div>
             </div>
           </div>
+         </div>
+        
+       
+        
         </div>
       </div>
       <div class="button-wrapper">
-        <button type="submit" class="btn-peersview-primary btn-peersview-md">Create</button>
+        <button type="submit" class="btn-peersview-primary btn-peersview-md">Next</button>
       </div>
     </form>
   </div>

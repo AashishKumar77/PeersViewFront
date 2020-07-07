@@ -26,8 +26,7 @@ import { TabTwoComponent } from './employability-assessment/tab-2/tab-2.componen
 import { TabThreeComponent } from './employability-assessment/tab-3/tab-3.component';
 import { TabFourComponent } from './employability-assessment/tab-4/tab-4.component';
 import { TabFiveComponent } from './employability-assessment/tab-5/tab-5.component';
-import { JobSampleResumeComponent } from './career-resources/course/finance/sample-resume/sample-resume.component';
-
+import { JobSampleResumeComponent } from './career-resources/course/finance/sample-resume/sample-resume.component'; 
 @NgModule({
     imports: [
         SharedModule,
